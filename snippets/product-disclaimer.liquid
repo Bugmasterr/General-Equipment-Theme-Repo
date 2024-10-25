@@ -1,0 +1,46 @@
+<div style="display:block; width:auto; hieght:auto;">
+  <small><b>Disclaimer</b></small>
+
+{% if product.description contains 'Reconditioned' %}
+     <small><i>
+       This is a reconditioned product and is in full operational condition. 
+       Photo may not represent the actual product which may or may not contain some cosmetic blemishes that do not interfere with functionality. 
+       
+       These units have been repainted and the manufacturer's logo may or may not be visible.  
+       GES will attempt to comply with, but will not guarantee, shipping date and or delivery date. 
+       The buyer shall have fifteen (15) days from the date of delivery to accept product.
+       We offer a 1-year operational warranty on all reconditioned equipment. 
+       
+     </i></small>
+{% elsif product.description contains 'New' %}
+     <small><i>
+       Buyer understands that the Goods described herein are new surplus by persons other than GES. 
+       GES is not obligated to do any repair work or modifications upon the Goods prior to sale or delivery. 
+       Any modifications performed by GES on the Goods prior to sale shall be performed as a result of the sole request of 
+       Buyer using designs and instructions provided by Buyer. GES will attempt to comply with, but will not guarantee, 
+       shipping date and or delivery date. 
+       Buyer shall have fifteen (15) days from the date of delivery to accept product.
+     </i></small>
+  {% elsif product.description contains 'Used' %}
+  <small><i>
+    Buyer understands that the Goods described herein have been used by persons other than GES. 
+    GES is not obligated to do any repair work or modifications upon the Goods prior to sale or delivery. 
+    Any repair work or modifications performed by GES on the Goods prior to sale shall be performed as a result of the sole request of Buyer using designs and instructions provided by Buyer. 
+    GES will attempt to comply with, but will not guarantee, shipping date and or delivery date. 
+    Buyer shall have fifteen (15) days from the date of delivery to accept product.
+  </i></small>
+ 
+  {% else %}
+   <small><i>
+       This is a reconditioned product and is in full operational condition. 
+       Photo may not represent the actual product which may or may not contain some cosmetic blemishes that do not interfere with functionality. 
+       
+       These units have been repainted and the manufacturer's logo may or may not be visible.  
+       GES will attempt to comply with, but will not guarantee, shipping date and or delivery date. 
+       The buyer shall have fifteen (15) days from the date of delivery to accept product.
+       We offer a 1-year operational warranty on all reconditioned equipment. 
+       
+     </i></small>
+
+{% endif %}
+</div>

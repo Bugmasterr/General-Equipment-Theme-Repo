@@ -1,0 +1,24 @@
+{%  comment %}
+{% layout none %}{{shop.vendors|json}}
+
+  <a href="#">
+    
+    <img src="https://cdn.shopify.com/s/files/1/0064/7597/2675/files/vendor-logo-{{ vendor }}.png" height="100" width="auto" />
+  <p> {{ vendor  }}  </p>
+  </a>
+{% endcomment %}
+
+
+<div style ="display:flex; flex-direction:column; height:auto;width:100%; background:red;">
+<h1>Trusted Brands</h1>
+  
+{% for vendor in shop.vendors  %}
+  <div style="display:flex;">
+  <div style="display:flex;  background-image: url('https://cdn.shopify.com/s/files/1/0064/7597/2675/files/vendor-logo-{{ vendor }}.png'); background-color:#666;padding:2rem;margin:2rem;width:200px;height:200px; background-size:contain;background-repeat: no-repeat;"  > </div>
+     <p> {{ vendor  }}  </p>
+      
+  </div>
+{% endfor %}
+  
+</div>
+<p>VENDOR finish</p>

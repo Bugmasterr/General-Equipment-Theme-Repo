@@ -1,0 +1,87 @@
+{% if product %}
+  {% assign product_title = product.title %}
+  {% assign product_barcode = product.barcode %}
+  {% comment %}
+    {% assign variant = product.variants.first %}
+  {% endcomment %}
+
+  {% for variant in product.variants %}
+    {% assign product_weight = variant.weight_in_unit %}
+    {% assign product_sku = variant.sku %}
+    {% assign product_barcode = product.barcode %}
+
+    {% assign product_url = product.url %}
+    {% assign product_vendor = product.vendor %}
+
+    {% assign product_mpn = product.metafields['shopify--facts'].mpn %}
+    {% assign product_condition = product.metafields['mm-google-shopping'].condition.value %}
+
+    {% assign product_quantity = variant.inventory_quantity %}
+    {% assign product_availability = 0 %}
+    {% assign product_price = variant.price %}
+    {% assign product_type = product.type %}
+    {% assign shippingRateZone1 = variant.metafields['mm-google-shopping'].custom_label_0.value %}
+
+    {% assign shippingRateZone_1 = product.metafields['mm-google-shopping'].custom_label_0.value %}
+    {% assign product_description = product.content | strip_html %}
+
+    {% assign product_fulfillment_time = product.metafields['mm-google-shopping'].shipping.value %}
+
+    {% if product_fulfillment_time %}
+      {% if product_weight >= 150 %}
+        {% assign shippingLabel = 'Oversized' %}
+      {% else %}
+
+      {% endif %}
+    {% endif %}
+
+    {% if product_quantity >= 1 %}
+      {% assign product_availability = 'in_stock' %}
+    {% else %}
+      {% assign product_availability = 'not_available' %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div><img src="{{ product | image_url: width: 600 }}"></div>
+      </div>
+      <div class="row">
+        <div class="col-6">{{ product | image_url: width: 200 | image_tag }}</div>
+        <div class="col-6">{{ product | image_url: width: 200 | image_tag }}</div>
+      </div>
+    </div>
+
+    <div class="col-4" style="background-color:white;">
+      <div class="row">
+        <h4>{{ product.title }}</h4>
+        <h6>{{ product_mpn }}</h6>
+        <h6>Fullfillment: {{ product_fulfillment_time }}</h6>
+        <h6>Availability: {{ product.metafields.global.in_stock }}</h6>
+        <p>shipping rate: {{ shippingRateZone1 }}</p>
+
+        <p>shipping rate: {{ shippingRateZone_1 }}</p>
+        <p>Condition: {{ product_condition }}</p>
+        <p>Weight: {{ product_weight | weight_with_unit }}s</p>
+        <p>{{ product.description }}</p>
+
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <select name="id">
+            {% for variant in product.variants %}
+              {% if variant.available == true %}
+                <option value="{{variant.id}}">
+                  {{ variant.title }} for {{ variant.price | money_with_currency }}
+                </option>
+              {% else %}
+                <option disabled="disabled">{{ variant.title }} - sold out!</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          <input type="submit" name="add" id="add" value="Add to Cart" class="button">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

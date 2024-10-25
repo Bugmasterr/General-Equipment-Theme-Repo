@@ -1,0 +1,940 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+{% style %}
+      fieldset {
+        margin: 2.5rem 0;
+        padding: 5rem;
+        background: #eee;
+        opacity:0.5;
+      }
+
+@media (min-width:1200px;) {
+   .power-distribution-form h1{
+    line-height:0.5;
+    padding: 0.25rem 0;
+    font-size: 6rem;
+    font-weight:bolder;
+  }
+  .power-distribution-form h3 {
+    font-size: 2.5rem;
+    color:#0000cc;
+    padding-top:0;
+  }
+}
+  
+  .power-distribution-form h1{
+    line-height:1;
+    padding: 0.25rem 0;
+    font-size: 3rem;
+    font-weight:bolder;
+  }
+  .power-distribution-form h3 {
+    font-size: 2rem;
+    color:#0000cc;
+    padding-top:0;
+  }
+      select {
+        background:#fff;
+      }
+   input[type=checkbox].box{
+
+    position: absolute !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+    height: 0 !important;
+    width: 0 !important;
+       padding:0 !important;
+        margin:0 !important;
+  }
+
+
+      select.dropdown,
+      input.dropdown,
+      textarea.dropdown {
+         appearance: none;
+          background-color: transparent;
+          border: none;
+          padding:0;
+          margin: 0;
+          font-family: inherit;
+          font-size: inherit;
+          cursor: inherit;
+          line-height: inherit;
+          border-left: #222 !important;
+          border-left-style: solid !important;
+          border-left-width: thin !important;
+          color: #444;;
+
+          padding: 1.5rem 10px;
+          margin:0;
+          width:100%;
+          background:#FFF;
+
+      }
+    option {
+      color: #444 !important;
+    }
+     .checkmark-container {
+      display: block;
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;+
+      user-select: none;
+    }
+
+
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 35px;
+      width: 35px;
+      background-color: #eee;
+      border:solid 2px #ddd;
+      border-radius:5px;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .checkmark-container:hover input.box ~ .checkmark {
+      background-color: #ccc !important;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .checkmark-container input.box:checked ~ .checkmark {
+      background-color: #2196F3 !important;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "" !important;
+      position: absolute !important;
+      display: none !important;
+    }
+
+    /* Show the checkmark when checked */
+    .checkmark-container input.box:checked ~ .checkmark:after {
+      display: block !important;
+    }
+
+    /* Style the checkmark/indicator */
+    .checkmark-container .checkmark:after {
+      left: 10px !important;
+      top: 5px !important;
+      width: 10px !important;
+      height: 20px !important;
+      border: solid white !important;
+      border-width: 0 3px 3px 0 !important;
+      -webkit-transform: rotate(45deg) !important;
+      -ms-transform: rotate(45deg) !important;
+      transform: rotate(45deg) !important;
+      z-index:9999999999999999 !important;
+    }
+
+     .input-row-wrap {
+          width:100%;
+          display: flex;
+          flex-direction: column;
+          justify-content:space-between;
+          margin-bottom:20px;
+        }
+          .input-row-wrap .field {
+          max-width:100%;
+          margin-right: 10px;
+        }
+    .input-row-wrap .field.form-qty {
+          width:100%;
+        }
+     .check-box-wrap {
+      display:flex; flex-direction:column;
+       justify-content:flex-start;
+       margin-right:0; height:auto;
+    }
+
+  @media (min-width: 768px;){
+        .input-row-wrap {
+          width:100%;
+          display: flex;
+          justify-content:space-between;
+          margin-bottom:20px;
+        }
+          .input-row-wrap .field {
+          max-width:50%;
+          margin-right: 10px;
+        }
+
+      .input-row-wrap .field.form-qty {
+          width:40%;
+        }
+    .check-box-wrap {
+      display:flex;
+      justify-content:space-between;
+      margin-right:25%;
+    }
+
+  }
+
+
+      label.dropdown {
+        padding:1.5rem 0 1.5rem 1.5rem;
+        font-size: 1.6rem;
+        width: 40%;
+      }
+{% endstyle %}
+
+<div class="contact page-width ">
+  {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+    {%- if form.posted_successfully? -%}
+      <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+        {% render 'icon-success' %}
+        {{ 'templates.contact.form.post_success' | t }}
+      </h2>
+    {%- elsif form.errors -%}
+      <div class="form__message">
+        <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+          {% render 'icon-error' %}
+          {{ 'templates.contact.form.error_heading' | t }}
+        </h2>
+      </div>
+      <ul class="form-status-list caption-large" role="list">
+        <li>
+          <a href="#ContactForm-email" class="link">
+            {{ form.errors.translated_fields.email | capitalize }}
+            {{ form.errors.messages.email }}
+          </a>
+        </li>
+      </ul>
+    {%- endif -%}
+    <input
+      type="hidden"
+      name="contact[powerDistributionCenterEstimateForm]"
+      value="Please contact the customer regarding a Power Distribution Center based on the following details."
+    >
+    <fieldset class="power-distribution-form">
+      <h2>Please tell us about your temporary power distribution requirements.</h2>
+      <h1>Portable Power Distribution Center Request Form</h1>
+      <h3>
+        To request an estimate, fill out as much of the form as possible or call us directly at 864.757.5248 for
+        assistance.
+      </h3>
+    </fieldset>
+    <fieldset>
+      <h1>Contact</h1>
+      <div class="contact__fields">
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="name"
+            type="text"
+            id="name"
+            name="contact[name]"
+            value="{{ form.name }}"
+            placeholder="Name"
+          >
+
+          <label class="field__label" for="name"> Your Name</label>
+        </div>
+        <div class="field">
+          <input
+            autocomplete="email"
+            type="email"
+            id="email"
+            class="field__input"
+            name="contact[email]"
+            placeholder="Email"
+            value="{{ form.email }}"
+            aria-required="true"
+            {% if form.errors contains 'email' %}
+              aria-invalid="true"
+              aria-describedby="ContactForm-email-error"
+            {% endif %}
+          >
+          <label class="field__label" for="email"> <span aria-hidden="true">*</span>Email</label>
+          {%- if form.errors contains 'email' -%}
+            <small class="contact__field-error" id="ContactForm-email-error">
+              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+              <span class="form__message">
+                {%- render 'icon-error' -%}
+                {{- form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email -}}
+              </span>
+            </small>
+          {%- endif -%}
+        </div>
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="Company Name"
+            type="text"
+            id="company"
+            name="contact[company]"
+            value="{{ form.company }}"
+            placeholder="Company Name"
+          >
+          <label class="field__label" for="company">Business Name</label>
+        </div>
+        <div class="field">
+          <input
+            type="tel"
+            id="phone"
+            class="field__input"
+            autocomplete="tel"
+            name="contact[phone]"
+            pattern="[0-9\-]*"
+            value="{{ form.phone }}"
+            placeholder="Business Phone"
+          >
+          <label class="field__label" for="phone">Phone</label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <h1>Primary Power Feed</h1>
+
+      <div class="input-row-wrap">
+        <div class="field">
+          <label class="dropdown" for="inputConnector">Type</label>
+
+          <select
+            class="dropdown"
+            name="contact[inputConnector]"
+            id="inputConnector"
+          >
+            <option value=" " selected="true">select input type</option>
+            <option value="Main Lug Only (MLO)">Main Lug Only (MLO)</option>
+            <option value="Fused Disconnect">Fused Disconnect</option>
+            <option value="Main Circuit Breaker">Main Circuit Breaker</option>
+            <option value="Cam-Lok Input">Cam-Lok Input</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="dropdown" for="inputVoltage">Voltage</label>
+
+          <select
+            class="dropdown"
+            name="contact[inputVoltage]"
+            id="inputVoltage"
+          >
+            <option value=" ">select input voltage</option>
+            <option value="480VAC 3Phase">480VAC 3Phase</option>
+            <option value="600VAC 3Phase">600VAC 3Phase</option>
+            <option value="380VAC 3Phase">380VAC 3Phase</option>
+            <option value="208VAC 3Phase">208VAC 3Phase</option>
+            <option value="240VAC 1Phase">240VAC 1Phase</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="dropdown" for="primaryCurrent">Amps</label>
+          <input
+            class="dropdown"
+            autocomplete="primaryCurrent"
+            type="text"
+            id="primaryCurrent"
+            name="contact[primaryCurrent]"
+            value="{{ form.primaryCurrent }}"
+            placeholder="primary current"
+          >
+        </div>
+      </div>
+      <h2>Primary Receptacles</h2>
+
+      <div class="input-row-wrap">
+        <div class="field form-qty">
+          <label class="dropdown" for="primaryReceptacleQuantity">Qty</label>
+
+          <input
+            class="dropdown"
+            autocomplete="primaryReceptacleQuantity"
+            type="number"
+            id="primaryReceptacleQuantity"
+            name="contact[primaryReceptacleQuantity]"
+            value="{{ form.primaryReceptacleQuantity }}"
+            placeholder="1"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="primaryReceptacleVoltage">Voltage</label>
+
+          <input
+            class="dropdown"
+            autocomplete="primaryReceptacleVoltage"
+            type="text"
+            id="rprimaryReceptacleVoltage"
+            name="contact[primaryReceptacleVoltage]"
+            value="{{ form.primaryReceptacleVoltage }}"
+            placeholder="primary receptacle"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="primaryReceptacleAmps">Amps</label>
+          <input
+            class="dropdown"
+            autocomplete="primaryReceptacleAmps"
+            type="text"
+            id="primaryReceptacleAmps"
+            name="contact[primaryReceptacleAmps]"
+            value="{{ form.primaryReceptacleAmps }}"
+            placeholder="primary receptacle"
+          >
+        </div>
+
+        <div class="field">
+          <label class="dropdown" for="primaryReceptacleStyle"> Style</label>
+
+          <select
+            class="dropdown"
+            name="contact[primaryReceptacleType]"
+            id="primaryReceptacleType"
+          >
+            <option value=" " selected="true">select receptacle style</option>
+            <option value="Twistlock">Twistlock</option>
+            <option value="Pin &amp; Sleeve">Pin &amp; Sleeve</option>
+            <option value="Decontactor">Decontactor</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <h1>Secondary Distribution</h1>
+
+      <div class="input-row-wrap">
+        <div class="field">
+          <label class="dropdown" for="secondaryPowerVoltage"> Voltage</label>
+          <select
+            class="dropdown"
+            name="contact[secondaryPowerVoltage]"
+            id="inputType"
+          >
+            <option value=" " selected="true">select secondary voltage</option>
+            <option value="240/120 VAC 1Phase">240/120 VAC 1Phase</option>
+            <option value="208/110 VAC 3Phase">208/110 VAC 3Phase</option>
+            <option value="Other (fill out text field)">Other (fill out text field)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="dropdown" for="secondaryPowerOther">Other</label>
+          <input
+            class="dropdown"
+            autocomplete="secondaryPowerOther"
+            type="text"
+            id="secondaryPowerOther"
+            name="contact[secondaryPowerOther]"
+            value="{{ form.secondaryPowerOther }}"
+            placeholder="Other"
+          >
+        </div>
+      </div>
+      <h2>Secondary Receptacles</h2>
+
+      <div class="input-row-wrap">
+        <div class="field form-qty">
+          <label class="dropdown" for="secondaryReceptacleQuantity">Qty</label>
+          <input
+            class="dropdown"
+            autocomplete="secondaryReceptacleQuantity"
+            type="number"
+            id="secondaryReceptacleQuantity"
+            name="contact[secondaryReceptacleQuantity]"
+            value="{{ form.secondaryReceptacleQuantity }}"
+            placeholder="0"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="secondaryReceptacleVoltage">Voltage</label>
+          <input
+            class="dropdown"
+            autocomplete="secondaryReceptacleVoltage"
+            type="text"
+            id="secondaryReceptacleVoltage"
+            name="[secondaryReceptacleVoltage]"
+            value="{{ secondaryReceptacleVoltage }}"
+            placeholder="secondary receptacle"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="secondaryReceptacleVoltage">Amps</label>
+          <input
+            class="dropdown"
+            autocomplete="secondaryReceptacleAmps"
+            type="text"
+            id="secondaryReceptacleAmps"
+            name="contact[secondaryReceptacleAmps]"
+            value="{{ form.secondaryReceptacleVoltage }}"
+            placeholder="secondary receptacle"
+          >
+        </div>
+
+        <div class="field">
+          <label class="dropdown" for="inputType"> Style</label>
+          <select
+            class="dropdown"
+            name="contact[secondaryReceptacleStyle]"
+            id="inputType"
+          >
+            <option value="" selected="true">Select Receptacle Style</option>
+            <option value="Single">Single</option>
+            <option value="Duplex">Duplex</option>
+            <option value="Twistlock">Twistlock</option>
+            <option value="Pin &amp; Sleeve">Pin &amp; Sleeve</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <h1>Additional Options</h1>
+      <div class="">
+        <div>
+          <h3>Choose as many of the options as required</h3>
+          <div class="check-box-wrap">
+            <label class="checkmark-container" for="wheels"
+              ><span>Wheels</span>
+              <input type="checkbox" name="contact[wheels]" value="yes" id="wheels" class="box">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="checkmark-container" for="liftEyes"
+              ><span>Lift Eyes</span>
+              <input type="checkbox" name="contact[liftEyes]" value="yes" id="liftEyes" class="box">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="checkmark-container" for="forkliftSlots"
+              ><span>Forklift Slots</span>
+              <input type="checkbox" name="contact[forkliftSlots]" value="yes" id="forkliftSlots" class="box">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="field">
+            <label class="dropdown" for="color">Color</label>
+            <input
+              class="dropdown"
+              autocomplete="color"
+              type="text"
+              id="color"
+              name="contact[color]"
+              value="{{ form.color }}"
+              placeholder="Color"
+            >
+          </div>
+        </div>
+        <div class="field">
+          <textarea
+            rows="2"
+            id="body"
+            class="dropdown"
+            name="contact[Requests]"
+            placeholder="additional requests or comments"
+          >
+            {{- form.body -}}
+            </textarea>
+        </div>
+      </div>
+    </fieldset>
+    <div class="contact__button">
+      <button type="submit" class="button">
+        {{ 'templates.contact.form.send' | t }}
+      </button>
+    </div>
+  {% endform %}
+</div>
+{% comment %}
+  <div
+            class=""
+            style="
+              border:none; display:flex; align-items:center; justify-content:flex-start; border:none;
+              font-size:2.2rem;  padding:0.5rem; min-width:50%;
+            "
+          >
+            <input type="checkbox" name="contact[wheels]" value="yes"><label for="wheels">Wheels</label><br>
+            <input type="checkbox" name="contact[liftEyes]" value="yes"><label for="liftEyes">Lift Eyes</label><br>
+            <input type="checkbox" name="contact[forkliftSlots]" value="yes"
+            ><label for="forkliftSlots">Forklift Slots</label>
+          </div>
+
+    <div class="contact page-width" style="padding:5rem; width:5%;">
+      {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+        {%- if form.posted_successfully? -%}
+          <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+            {% render 'icon-success' %}
+            {{ 'templates.contact.form.post_success' | t }}
+          </h2>
+        {%- elsif form.errors -%}
+          <div class="form__message">
+            <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+              {% render 'icon-error' %}
+              {{ 'templates.contact.form.error_heading' | t }}
+            </h2>
+          </div>
+          <ul class="form-status-list caption-large" role="list">
+            <li>
+              <a href="#email" class="link">
+                {{ form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email }}
+              </a>
+            </li>
+          </ul>
+        {%- endif -%}
+        <div class="">
+          <div class="field">
+            <input
+              class="field__input"
+              autocomplete="name"
+              type="text"
+              id="name"
+              name="contact[name]"
+              value="{{ form.name }}"
+              placeholder="Name"
+            >
+
+            <label class="field__label" for="name"> Your Name</label>
+          </div>
+          <div class="field">
+            <input
+              class="field__input"
+              autocomplete="Company Name"
+              type="text"
+              id="company"
+              name="contact[company]"
+              value="{{ form.company }}"
+              placeholder="Company Name"
+            >
+            <label class="field__label" for="company">Business Name</label>
+          </div>
+
+          <div class="field field--with-error">
+            <input
+              autocomplete="email"
+              type="email"
+              id="email"
+              class="field__input"
+              name="contact[email]"
+              spellcheck="false"
+              autocapitalize="off"
+              value="{{ form.email }}"
+              aria-required="true"
+              {% if form.errors contains 'email' %}
+                aria-invalid="true"
+                aria-describedby="email-error"
+              {% endif %}
+              placeholder="Your Email"
+            >
+            <label class="field__label" for="email">
+              Your Email
+              <span aria-hidden="true">*</span></label
+            >
+            {%- if form.errors contains 'email' -%}
+              <small class="contact__field-error" id="email-error">
+                <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                <span class="form__message">
+                  {%- render 'icon-error' -%}
+                  {{- form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email -}}
+                </span>
+              </small>
+            {%- endif -%}
+          </div>
+          <div class="field">
+            <input
+              type="tel"
+              id="phone"
+              class="field__input"
+              autocomplete="tel"
+              name="contact[phone]"
+              pattern="[0-9\-]*"
+              value="{{ form.phone }}"
+              placeholder="Business Phone"
+            >
+            <label class="field__label" for="phone">Phone</label>
+          </div>
+
+             <div class="field">
+            <textarea
+              rows="10"
+              id="body"
+              class="text-area field__input"
+              name="contact[{{ 'templates.contact.form.comment' | t }}]"
+              placeholder="{{ 'templates.contact.form.comment' | t }}"
+            >
+              {{- form.body -}}
+            </textarea>
+            <label class="form__label field__label" for="body">
+              {{- 'templates.contact.form.comment' | t -}}
+            </label>
+          </div>
+
+
+
+        <div class="contact__button">
+          <button type="submit" class="button">
+            {{ 'templates.contact.form.send' | t }}
+          </button>
+        </div>
+        </div>
+      {% endform %}
+    </div>
+{% endcomment %}
+{% comment %}
+  {% style %}
+    select {
+        display:inline-block;
+      appearance: none;
+
+        background-color: transparent;
+        border: none;
+        padding: 0 1em 0 0;
+        margin: 0;
+
+        font-family: inherit;
+        font-size: inherit;
+        cursor: inherit;
+        line-height: inherit;
+    }
+     option {
+       padding:0;
+       margin:0;
+     }
+
+     .select-label {
+        font-size: 1.6rem !important;
+       background:transparent;
+
+      }
+
+    .select-style select{
+
+       padding:0;
+       margin:0;
+       width:80%;
+      max-width:80%;
+      margin-left:20%;
+     }
+
+     .select-style field__input {
+        padding:0;
+       margin:0;
+     }
+
+    .radio-group {
+      display:block;
+    }
+
+
+    .input-row-wrap {
+      display: flex;
+      justify-content:space-between;
+      justify-content: start;
+    }
+
+    .input-row-wrap .field {
+
+      width:auto;
+      margin-left: 10px;
+    }
+
+
+    .input-row-wrap .field.form-qty {
+      min-width:7.5rem;
+      width:7.5rem;
+      max-width: 7.5rem;
+    }
+
+
+  {% endstyle %}
+
+  <div class="contact-radio-wrap">
+        <fieldset>
+          <h4>Primary Power Input</h4>
+
+          <div class="radio-group">
+            <input type="radio" name="contact[phase]" value="single phase" id="singlePhase"
+            ><label for="singlePhase">Single Phase</label>
+            <input type="radio" name="contact[phase]" value="three phase" id="threePhase"
+            ><label for="threePhase">Three Phase</label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="contact[primary power input]" id="inputVoltage1" value="480VAC "
+            ><label for="inputVoltage1">480VAC </label>
+            <input type="radio" name="contact[primary power input]" id="inputVoltage2" value="600VAC "
+            ><label for="inputVoltage2">600VAC </label>
+            <input type="radio" name="contact[primary power input]" id="inputVoltage3" value="380VAC "
+            ><label for="inputVoltage3">380VAC </label>
+            <input type="radio" name="contact[primary power input]" id="inputVoltage4" value="208VAC "
+            ><label for="inputVoltage4">208VAC </label>
+            <input type="radio" name="contact[primary power input]" id="inputVoltage5" value="240VAC "
+            ><label for="inputVoltage5">240VAC </label>
+          </div>
+          <div class="radio-group">
+            <input
+              type="radio"
+              value="Main Lug Only (MLO)"
+              id="inputType1"
+              name="contact[input type]"
+
+            ><label for="inputType1">Main Lug Only (MLO)</label>
+            <input
+              type="radio"
+              value="Fused Disconnect"
+              id="inputType2"
+              name="contact[input type]"
+
+            ><label for="inputType2">Fused Disconnect</label>
+            <input
+              type="radio"
+              value="Main Circuit Breaker"
+              id="inputType3"
+              name="contact[input type]"
+
+            ><label for="inputType3">Main Circuit Breaker</label>
+            <input
+              type="radio"
+              value="Cam-Lok Input"
+              id="inputType4"
+              name="contact[input type]"
+
+            ><label for="inputType4">Cam-Lok Input</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <h4>Primary Receptacles</h4>
+
+          <div class="input-row-wrap">
+
+            <div class="field form-qty">
+              <input
+                class="field__input"
+                autocomplete="Quantity"
+                type="number"
+                id="primaryReceptacleQuantity"
+                name="contact[receptacle quantity]"
+                value="{{ form.primaryReceptacleQuantity }}"
+                placeholder="Quantity"
+              >
+                <label class="field__label" for="primaryReceptacleQuantity">Qty</label>
+
+            </div>
+
+            <div class="field">
+              <input
+                class="field__input"
+                autocomplete="volt1"
+                type="text"
+                id="receptaclevolts1"
+                name="contact[receptacle volts]"
+                value="{{ form.receptaclevolts1 }}"
+                placeholder="Volts"
+              >
+              <label class="field__label" for="receptaclevolts1">Volts</label>
+            </div>
+
+            <div class="field">
+              <input
+                class="field__input"
+                autocomplete="amps"
+                type="text"
+                id="receptacleamp1"
+                name="contact[receptacle amp]"
+                value="{{ form.receptacleamp1 }}"
+                placeholder="Amps"
+              >
+              <label class="field__label" for="receptacleamp1">Amps</label>
+            </div>
+
+            <select
+              name="primary recepticle"
+              class="field__input"
+              style=""
+              id="primaryReceptacle"
+            >
+              <option value=" ">Type</option>
+              <option value="Twistlock">Twistlock</option>
+              <option value="Pin &amp; Sleeve">Pin &amp; Sleeve</option>
+              <option value="Decontactor">Decontactor</option>
+
+            </select>
+
+            <label class="field__label select-label" for="primaryReceptacle">Type</label>
+
+          </div>
+        </fieldset>
+      </div>
+
+    <select data-element-id="193R" aria-required="false" name="Connection Dropdown" tabindex="1000" style="font-size: calc(12px * var(--scale-factor)); color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);" id="pdfjs_internal_id_193R"><option value=" " selected="true"> </option><option value="Main Lug Only (MLO)">Main Lug Only (MLO)</option><option value="Fused Disconnect">Fused Disconnect</option><option value="Main Circuit Breaker">Main Circuit Breaker</option><option value="Cam-Lok Input">Cam-Lok Input</option></select>
+
+      <div class="field select-style">
+              <select class="field__input " id="inputVoltage">
+                <option value=" "></option>
+                <option value="480VAC 3Phase">480VAC 3Phase</option>
+                <option value="600VAC 3Phase">600VAC 3Phase</option>
+                <option value="380VAC 3Phase">380VAC 3Phase</option>
+                <option value="208VAC 3Phase">208VAC 3Phase</option>
+                <option value="240VAC 1Phase">240VAC 1Phase</option>
+              </select>
+              <label class="field__label select-label" for="inputVoltage">Voltage</label>
+            </div>
+     <input type="radio" name="contact[primary power input]" id="inputVoltage1" value="480VAC 3Phase"><label for="inputVoltage1">480VAC 3Phase</label>
+                <input type="radio" name="contact[primary power input]" id="inputVoltage2" value="600VAC 3Phase"><label for="inputVoltage2">600VAC 3Phase</label>
+                <input type="radio" name="contact[primary power input]" id="inputVoltage3" value="380VAC 3Phase"><label for="inputVoltage3">380VAC 3Phase</label>
+                <input type="radio" name="contact[primary power input]" id="inputVoltage4" value="208VAC 3Phase"><label for="inputVoltage4">208VAC 3Phase</label>
+                <input type="radio" name="contact[primary power input]" id="inputVoltage5" value="240VAC 1Phase"><label for="inputVoltage5">240VAC 1Phase</label>
+
+
+    <div class="field" id="inputVoltage">
+
+          <div class="field">
+            <input
+              class="field__input"
+              autocomplete="Quantity"
+              type="text"
+              id="primaryReceptacleQuantity"
+              name="contact[receptacle quantity]"
+              value="{{ form.primaryReceptacleQuantity }}"
+              placeholder="Quantity"
+            >
+            <label class="field__label" for="primaryReceptacleQuantity">Quantity</label>
+          </div>
+
+          <div class="field">
+            <input
+              class="field__input"
+              autocomplete="volt1"
+              type="text"
+              id="receptaclevolts1"
+              name="contact[receptacle volts]"
+              value="{{ form.receptaclevolts1 }}"
+              placeholder="Volts"
+            >
+            <label class="field__label" for="receptaclevolts1">Volts</label>
+          </div>
+
+          <div class="field">
+            <input
+              class="field__input"
+              autocomplete="amps"
+              type="text"
+              id="receptacleamp1"
+              name="contact[receptacle amp]"
+              value="{{ form.receptacleamp1 }}"
+              placeholder="Amps"
+            >
+            <label class="field__label" for="receptacleamp1">Amps</label>
+          </div>
+          <div class="field">
+            <input
+              class="field__input"
+              autocomplete="type"
+              type="text"
+              id="receptacletype1"
+              name="contact[receptacle type]"
+              value="{{ form.receptacletype1 }}"
+              placeholder="Type"
+            >
+            <label class="field__label" for="receptacleamp1">Type</label>
+          </div>
+      </div>
+{% endcomment %}

@@ -1,0 +1,54 @@
+<section
+  id="MainProduct-{{ section.id }}"
+  class="section-{{ section.id }}"
+  data-section="{{ section.id }}"
+>
+
+  {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'title' -%}
+               {% render 'product-title' %}
+              
+              {%- when 'price' -%}
+                {% render 'product-price' %}
+              
+              {% when 'lead-time' %}
+              {% render 'product-lead-time' %}
+
+              
+              {% when 'product-disclaimer' %}
+               {% render 'product-disclaimer' %}
+              
+              {% endcase %}
+  {% endfor %}
+</section>
+              
+{% schema %}
+{
+  "name": "t:sections.main-product.name",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+  {
+      "type": "title",
+      "name": "t:sections.main-product.blocks.title.name",
+      "limit": 1
+    },
+    {
+      "type": "price",
+      "name": "t:sections.main-product.blocks.price.name",
+      "limit": 1
+    },
+    {
+      "type": "lead-time",
+      "name": "Lead Time"  
+    },
+    {
+      "type": "product-disclaimer",
+       "name": "Product Disclaimer"
+    }
+  ]
+  
+}
+
+    {% endschema %}

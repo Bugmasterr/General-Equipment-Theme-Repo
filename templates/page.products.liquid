@@ -1,0 +1,31 @@
+
+{% comment %}
+{% style %} 
+  .product-submenu-grid li
+  {
+    display:inline-block
+  }
+  {% endstyle %}
+{% assign path = request.path %}
+{% if path contains 'bending' %}
+  <div>
+  <ul class="product-submenu-grid">
+  
+    
+    <li><a href="#">Bending Machines</a></li>
+    <li><a href="#">Electric Bending Machines</a></li>
+    
+    <li><a href="#">Hydraulic Bending Machines</a></li>
+    
+    <li><a href="#">Hand Bender</a></li>
+    
+    <li><a href="#">Bending Shoes & Accesories</a></li>
+
+  </ul>
+  </div>
+{% else %}
+  {{ path }}
+{% endif %}
+{% endcomment %}
+
+{%  render 'collection-type' %}

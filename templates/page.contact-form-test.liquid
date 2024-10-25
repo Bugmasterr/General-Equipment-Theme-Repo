@@ -1,0 +1,1061 @@
+{% comment %}
+///
+reference: https://websensepro.com/blog/how-to-add-custom-contact-form-in-shopify-without-app/
+\\\\
+/////
+https://websensepro.com/blog/how-to-create-custom-contact-forms-in-shopify-add-more-fields/
+\\\\\\\
+
+{% endcomment %}
+
+
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+<div class=" gradient">
+  <div class="contact page-width page-width--narrow ">
+    {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+  
+{% render 'custom-form-fields' %}
+{% endform %}
+  </div>
+</div>
+
+{% comment %}
+
+{% style %}
+  
+      label.dropdown {
+        padding:1.5rem 0 1.5rem 1.5rem;
+        font-size: 1.6rem;
+        width: 40%;
+      }
+  
+  select {
+        background:#fff;
+      }
+  
+   input[type=checkbox].box{
+
+    position: absolute !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+    height: 0 !important;
+    width: 0 !important;
+       padding:0 !important;
+        margin:0 !important;
+  }
+
+
+      select.dropdown,
+      input.dropdown,
+      textarea.dropdown {
+         appearance: none;
+          background-color: transparent;
+          border: none;
+          padding:0;
+          margin: 0;
+          font-family: inherit;
+          font-size: inherit;
+          cursor: inherit;
+          line-height: inherit;
+          border-left: #222 !important;
+          border-left-style: solid !important;
+          border-left-width: thin !important;
+          color: #444;;
+
+          padding: 1.5rem 10px;
+          margin:0;
+          width:100%;
+          background:#FFF;
+
+      }
+    option {
+      color: #444 !important;
+    }
+  form {
+    position: relative;
+  }
+  .step {
+      display: none;
+      
+    padding: 10rem;
+  }
+  
+  .step.active {
+    display: block;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-group {
+      width: 100%;
+      margin-top: 20px;
+  }
+  .contact__button {
+    position: absolute;
+    bottom: 10px;
+  }
+  .message {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: white;
+    z-index:9;
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    align-items: center;
+  }
+  .message h2 {
+    font-size: 5em;
+  }
+  .contact {
+     
+  }
+      
+  {% endstyle%}
+
+<div class=" gradient">
+  <div class="contact page-width page-width--narrow ">
+    {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+  
+      <div class="step step-1 active">
+         <h1>Primary Power Feed</h1>
+
+      <div class="input-row-wrap">
+        <div class="field">
+          <label class="dropdown" for="inputConnector">Type</label>
+
+          <select
+            class="dropdown"
+            name="contact[inputConnector]"
+            id="inputConnector"
+          >
+            <option value=" " selected="true">select input type</option>
+            <option value="Main Lug Only (MLO)">Main Lug Only (MLO)</option>
+            <option value="Fused Disconnect">Fused Disconnect</option>
+            <option value="Main Circuit Breaker">Main Circuit Breaker</option>
+            <option value="Cam-Lok Input">Cam-Lok Input</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="dropdown" for="inputVoltage">Voltage</label>
+
+          <select
+            class="dropdown"
+            name="contact[inputVoltage]"
+            id="inputVoltage"
+          >
+            <option value=" ">select input voltage</option>
+            <option value="480VAC 3Phase">480VAC 3Phase</option>
+            <option value="600VAC 3Phase">600VAC 3Phase</option>
+            <option value="380VAC 3Phase">380VAC 3Phase</option>
+            <option value="208VAC 3Phase">208VAC 3Phase</option>
+            <option value="240VAC 1Phase">240VAC 1Phase</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="dropdown" for="primaryCurrent">Amps</label>
+          <input
+            class="dropdown"
+            autocomplete="primaryCurrent"
+            type="text"
+            id="primaryCurrent"
+            name="contact[primaryCurrent]"
+            value="{{ form.primaryCurrent }}"
+            placeholder="primary current"
+          >
+        </div>
+      </div>
+   
+        <div class="contact__button">
+        <button type="button" class="button previous-btn">Prev</button>
+        <button type="button" class="button next-btn">Next</button>
+        </div>
+      </div>
+      <div class="step step-2 ">
+        <h2>Primary Receptacles</h2>
+
+      <div class="input-row-wrap">
+        <div class="field form-qty">
+          <label class="dropdown" for="primaryReceptacleQuantity">Qty</label>
+
+          <input
+            class="dropdown"
+            autocomplete="primaryReceptacleQuantity"
+            type="number"
+            id="primaryReceptacleQuantity"
+            name="contact[primaryReceptacleQuantity]"
+            value="{{ form.primaryReceptacleQuantity }}"
+            placeholder="1"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="primaryReceptacleVoltage">Voltage</label>
+
+          <input
+            class="dropdown"
+            autocomplete="primaryReceptacleVoltage"
+            type="text"
+            id="rprimaryReceptacleVoltage"
+            name="contact[primaryReceptacleVoltage]"
+            value="{{ form.primaryReceptacleVoltage }}"
+            placeholder="primary receptacle"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="primaryReceptacleAmps">Amps</label>
+          <input
+            class="dropdown"
+            autocomplete="primaryReceptacleAmps"
+            type="text"
+            id="primaryReceptacleAmps"
+            name="contact[primaryReceptacleAmps]"
+            value="{{ form.primaryReceptacleAmps }}"
+            placeholder="primary receptacle"
+          >
+        </div>
+
+        <div class="field">
+          <label class="dropdown" for="primaryReceptacleStyle"> Style</label>
+
+          <select
+            class="dropdown"
+            name="contact[primaryReceptacleType]"
+            id="primaryReceptacleType"
+          >
+            <option value=" " selected="true">select receptacle style</option>
+            <option value="Twistlock">Twistlock</option>
+            <option value="Pin &amp; Sleeve">Pin &amp; Sleeve</option>
+            <option value="Decontactor">Decontactor</option>
+          </select>
+        </div>
+      </div>
+
+
+        <div class="contact__button">
+        <button type="button" class="button previous-btn">Prev</button>
+        <button type="button" class="button next-btn">Next</button>
+        </div>
+      </div>
+      
+      <div class="step step-3">
+       <h1>Secondary Distribution</h1>
+
+      <div class="input-row-wrap">
+          <div class="field" style="border:0; opacity:0;">
+          <label class="dropdown" style="border:0; opacity:0;">Type</label>
+
+        </div>
+        <div class="field">
+          <label class="dropdown" for="secondaryPowerVoltage"> Voltage</label>
+          <select
+            class="dropdown"
+            name="contact[secondaryPowerVoltage]"
+            id="inputType"
+          >
+            <option value=" " selected="true">select secondary voltage</option>
+            <option value="240/120 VAC 1Phase">240/120 VAC 1Phase</option>
+            <option value="208/110 VAC 3Phase">208/110 VAC 3Phase</option>
+            <option value="Other (fill out text field)">Other (fill out text field)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="dropdown" for="secondaryPowerOther">Other</label>
+          <input
+            class="dropdown"
+            autocomplete="secondaryPowerOther"
+            type="text"
+            id="secondaryPowerOther"
+            name="contact[secondaryPowerOther]"
+            value="{{ form.secondaryPowerOther }}"
+            placeholder="Other"
+          >
+        </div>
+      </div>
+      
+        <div class="contact__button">  
+        <button type="button" class="button previous-btn">Prev</button>
+        <button type="button" class="button next-btn">Next</button>
+        </div>
+      </div>  
+      
+      <div class="step step-4">
+       <h2>Secondary Receptacles</h2>
+
+      <div class="input-row-wrap">
+        <div class="field form-qty">
+          <label class="dropdown" for="secondaryReceptacleQuantity">Qty</label>
+          <input
+            class="dropdown"
+            autocomplete="secondaryReceptacleQuantity"
+            type="number"
+            id="secondaryReceptacleQuantity"
+            name="contact[secondaryReceptacleQuantity]"
+            value="{{ form.secondaryReceptacleQuantity }}"
+            placeholder="0"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="secondaryReceptacleVoltage">Voltage</label>
+          <input
+            class="dropdown"
+            autocomplete="secondaryReceptacleVoltage"
+            type="text"
+            id="secondaryReceptacleVoltage"
+            name="[secondaryReceptacleVoltage]"
+            value="{{ secondaryReceptacleVoltage }}"
+            placeholder="secondary receptacle"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="secondaryReceptacleVoltage">Amps</label>
+          <input
+            class="dropdown"
+            autocomplete="secondaryReceptacleAmps"
+            type="text"
+            id="secondaryReceptacleAmps"
+            name="contact[secondaryReceptacleAmps]"
+            value="{{ form.secondaryReceptacleVoltage }}"
+            placeholder="secondary receptacle"
+          >
+        </div>
+
+        <div class="field">
+          <label class="dropdown" for="inputType"> Style</label>
+          <select
+            class="dropdown"
+            name="contact[secondaryReceptacleStyle]"
+            id="inputType"
+          >
+            <option value="" selected="true">Select Receptacle Style</option>
+            <option value="Single">Single</option>
+            <option value="Duplex">Duplex</option>
+            <option value="Twistlock">Twistlock</option>
+            <option value="Pin &amp; Sleeve">Pin &amp; Sleeve</option>
+          </select>
+        </div>
+      </div>
+        
+  <div class="contact__button">  
+        <button type="button" class="button previous-btn">Prev</button>
+        <button type="button" class="button next-btn">Next</button>
+        </div>
+      </div>
+       <div class="step step-4">
+         <h1>Primary Power Feed</h1>
+
+      <div class="input-row-wrap">
+        <div class="field">
+          <label class="dropdown" for="inputConnector">Type</label>
+
+          <select
+            class="dropdown"
+            name="contact[inputConnector]"
+            id="inputConnector"
+          >
+            <option value=" " selected="true">select input type</option>
+            <option value="Main Lug Only (MLO)">Main Lug Only (MLO)</option>
+            <option value="Fused Disconnect">Fused Disconnect</option>
+            <option value="Main Circuit Breaker">Main Circuit Breaker</option>
+            <option value="Cam-Lok Input">Cam-Lok Input</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="dropdown" for="inputVoltage">Voltage</label>
+
+          <select
+            class="dropdown"
+            name="contact[inputVoltage]"
+            id="inputVoltage"
+          >
+            <option value=" ">select input voltage</option>
+            <option value="480VAC 3Phase">480VAC 3Phase</option>
+            <option value="600VAC 3Phase">600VAC 3Phase</option>
+            <option value="380VAC 3Phase">380VAC 3Phase</option>
+            <option value="208VAC 3Phase">208VAC 3Phase</option>
+            <option value="240VAC 1Phase">240VAC 1Phase</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="dropdown" for="primaryCurrent">Amps</label>
+          <input
+            class="dropdown"
+            autocomplete="primaryCurrent"
+            type="text"
+            id="primaryCurrent"
+            name="contact[primaryCurrent]"
+            value="{{ form.primaryCurrent }}"
+            placeholder="primary current"
+          >
+        </div>
+      </div>
+      <h2>Primary Receptacles</h2>
+
+      <div class="input-row-wrap">
+        <div class="field form-qty">
+          <label class="dropdown" for="primaryReceptacleQuantity">Qty</label>
+
+          <input
+            class="dropdown"
+            autocomplete="primaryReceptacleQuantity"
+            type="number"
+            id="primaryReceptacleQuantity"
+            name="contact[primaryReceptacleQuantity]"
+            value="{{ form.primaryReceptacleQuantity }}"
+            placeholder="1"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="primaryReceptacleVoltage">Voltage</label>
+
+          <input
+            class="dropdown"
+            autocomplete="primaryReceptacleVoltage"
+            type="text"
+            id="rprimaryReceptacleVoltage"
+            name="contact[primaryReceptacleVoltage]"
+            value="{{ form.primaryReceptacleVoltage }}"
+            placeholder="primary receptacle"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="primaryReceptacleAmps">Amps</label>
+          <input
+            class="dropdown"
+            autocomplete="primaryReceptacleAmps"
+            type="text"
+            id="primaryReceptacleAmps"
+            name="contact[primaryReceptacleAmps]"
+            value="{{ form.primaryReceptacleAmps }}"
+            placeholder="primary receptacle"
+          >
+        </div>
+
+        <div class="field">
+          <label class="dropdown" for="primaryReceptacleStyle"> Style</label>
+
+          <select
+            class="dropdown"
+            name="contact[primaryReceptacleType]"
+            id="primaryReceptacleType"
+          >
+            <option value=" " selected="true">select receptacle style</option>
+            <option value="Twistlock">Twistlock</option>
+            <option value="Pin &amp; Sleeve">Pin &amp; Sleeve</option>
+            <option value="Decontactor">Decontactor</option>
+          </select>
+        </div>
+      </div>
+
+        <div class="contact__button">
+        <button type="button" class="button previous-btn">Prev</button>
+        <button type="button" class="button next-btn">Next</button>
+        </div>
+      </div>
+      
+      <div class="step step-5">
+   
+      <h2>Secondary Receptacles</h2>
+
+      <div class="input-row-wrap">
+        <div class="field form-qty">
+          <label class="dropdown" for="secondaryReceptacleQuantity">Qty</label>
+          <input
+            class="dropdown"
+            autocomplete="secondaryReceptacleQuantity"
+            type="number"
+            id="secondaryReceptacleQuantity"
+            name="contact[secondaryReceptacleQuantity]"
+            value="{{ form.secondaryReceptacleQuantity }}"
+            placeholder="0"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="secondaryReceptacleVoltage">Voltage</label>
+          <input
+            class="dropdown"
+            autocomplete="secondaryReceptacleVoltage"
+            type="text"
+            id="secondaryReceptacleVoltage"
+            name="[secondaryReceptacleVoltage]"
+            value="{{ secondaryReceptacleVoltage }}"
+            placeholder="secondary receptacle"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="secondaryReceptacleVoltage">Amps</label>
+          <input
+            class="dropdown"
+            autocomplete="secondaryReceptacleAmps"
+            type="text"
+            id="secondaryReceptacleAmps"
+            name="contact[secondaryReceptacleAmps]"
+            value="{{ form.secondaryReceptacleVoltage }}"
+            placeholder="secondary receptacle"
+          >
+        </div>
+
+        <div class="field">
+          <label class="dropdown" for="inputType"> Style</label>
+          <select
+            class="dropdown"
+            name="contact[secondaryReceptacleStyle]"
+            id="inputType"
+          >
+            <option value="" selected="true">Select Receptacle Style</option>
+            <option value="Single">Single</option>
+            <option value="Duplex">Duplex</option>
+            <option value="Twistlock">Twistlock</option>
+            <option value="Pin &amp; Sleeve">Pin &amp; Sleeve</option>
+          </select>
+        </div>
+      </div>
+        <div class="contact__button">  
+        <button type="button" class="button previous-btn">Prev</button>
+        <button type="button" class="button next-btn">Next</button>
+        </div>
+      </div> 
+      
+      <div class="step step-6">
+        <h1>Contact</h1>
+      <div class="contact__fields">
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="name"
+            type="text"
+            id="name"
+            name="contact[name]"
+            value="{{ form.name }}"
+            placeholder="Name"
+          >
+
+          <label class="field__label" for="name"> Your Name</label>
+        </div>
+        <div class="field">
+          <input
+            autocomplete="email"
+            type="email"
+            id="email"
+            class="field__input"
+            name="contact[email]"
+            placeholder="Email"
+            value="{{ form.email }}"
+            aria-required="true"
+            {% if form.errors contains 'email' %}
+              aria-invalid="true"
+              aria-describedby="ContactForm-email-error"
+            {% endif %}
+          >
+          <label class="field__label" for="email"> <span aria-hidden="true">*</span>Email</label>
+          {%- if form.errors contains 'email' -%}
+            <small class="contact__field-error" id="ContactForm-email-error">
+              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+              <span class="form__message">
+                {%- render 'icon-error' -%}
+                {{- form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email -}}
+              </span>
+            </small>
+          {%- endif -%}
+        </div>
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="Company Name"
+            type="text"
+            id="company"
+            name="contact[company]"
+            value="{{ form.company }}"
+            placeholder="Company Name"
+          >
+          <label class="field__label" for="company">Business Name</label>
+        </div>
+        <div class="field">
+          <input
+            type="tel"
+            id="phone"
+            class="field__input"
+            autocomplete="tel"
+            name="contact[phone]"
+            pattern="[0-9\-]*"
+            value="{{ form.phone }}"
+            placeholder="Business Phone"
+          >
+          <label class="field__label" for="phone">Phone</label>
+        </div>
+      </div>
+
+        <div class="contact__button">
+          
+        <button type="submit" class="button">
+          {{ 'templates.contact.form.send' | t }}
+        </button>
+      </div>
+      </div>
+
+       {%- if form.posted_successfully? -%}
+      <div class="message">
+        <h2 class="form-status" tabindex="-1">
+        
+         Thanks for Contacting Us.<br>
+          We'll Get Back to You as Soon as Possible
+        </h2>
+      </div>
+      {%- endif -%}
+    {% endform %}
+    
+
+  </div>
+</div>
+
+<script>
+  const steps = Array.from(document.querySelectorAll("form .step"));
+   const nextBtn = document.querySelectorAll("form .next-btn");
+   const prevBtn = document.querySelectorAll("form .previous-btn");
+   const form = document.querySelector("form");
+   nextBtn.forEach((button) => {
+    button.addEventListener("click", () => {
+     changeStep("next");
+    });
+   });
+   prevBtn.forEach((button) => {
+    button.addEventListener("click", () => {
+     changeStep("prev");
+    });
+   });
+   form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const inputs = [];
+    form.querySelectorAll("input").forEach((input) => {
+     const { name, value } = input;
+     inputs.push({ name, value });
+    });
+    console.log(inputs);
+    form.reset();
+   });
+   function changeStep(btn) {
+    let index = 0;
+    const active = document.querySelector(".active");
+    index = steps.indexOf(active);
+    steps[index].classList.remove("active");
+    if (btn === "next") {
+     index++;
+    } else if (btn === "prev") {
+     index--;
+    }
+    steps[index].classList.add("active");
+   }
+</script>
+
+{% endcomment %}
+
+{% comment %} 
+
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  
+
+      label.dropdown {
+        padding:1.5rem 0 1.5rem 1.5rem;
+        font-size: 1.6rem;
+        width: 40%;
+      }
+  
+  select {
+        background:#fff;
+      }
+  
+   input[type=checkbox].box{
+
+    position: absolute !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+    height: 0 !important;
+    width: 0 !important;
+       padding:0 !important;
+        margin:0 !important;
+  }
+
+
+      select.dropdown,
+      input.dropdown,
+      textarea.dropdown {
+         appearance: none;
+          background-color: transparent;
+          border: none;
+          padding:0;
+          margin: 0;
+          font-family: inherit;
+          font-size: inherit;
+          cursor: inherit;
+          line-height: inherit;
+          border-left: #222 !important;
+          border-left-style: solid !important;
+          border-left-width: thin !important;
+          color: #444;;
+
+          padding: 1.5rem 10px;
+          margin:0;
+          width:100%;
+          background:#FFF;
+
+      }
+    option {
+      color: #444 !important;
+    }
+
+  #contact-power{
+     /*
+      position:relative;
+      margin: 0 auto;
+      height: 100vh;
+      width:90%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: aliceblue;
+    */
+  }
+  
+  #contact-power .contact {
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height:100%;
+      
+      min-width: 100vw;
+      margin: 0 auto;
+      padding: 0 10rem;
+      box-shadow: 0px 0px 20px #00000020;
+      border-radius: 8px;
+      background-color: white;
+  }
+  
+  .step {
+      display: none;
+  }
+  
+  .step.active {
+      display: block;
+  }
+  
+  .form-group {
+      width: 100%;
+      margin-top: 20px;
+  }
+  
+  .form-group input {
+      width: 100%;
+      border: 1.5px solid rgba(128, 128, 128, 0.418);
+      padding: 5px;
+      font-size: 18px;
+      margin-top: 5px;
+      border-radius: 4px;
+  }
+  
+  button.next-btn,
+  button.previous-btn,
+  button.submit-btn {
+      float: right;
+      margin-top: 20px;
+      padding: 10px 30px;
+      border: none;
+      outline: none;
+      background-color: rgb(180, 220, 255);
+      font-family: "Montserrat";
+      font-size: 18px;
+      cursor: pointer; /* text-align: right; */
+  }
+  button.previous-btn {
+      float: left;
+  }
+  button.submit-btn {
+      background-color: aquamarine;
+  }
+
+  .contact .form__message {
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background: white;
+    color: green;
+    font-size: 3.3rem;
+    z-index: 9;
+}
+
+  
+{% endstyle %}
+
+<section id="contact-power">
+  <div class="contact">
+      {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+    {%- if form.posted_successfully? -%}
+      <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+        {% render 'icon-success' %}
+        {{ 'templates.contact.form.post_success' | t }}
+      </h2>
+    {%- elsif form.errors -%}
+      <div class="form__message">
+        <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+          {% render 'icon-error' %}
+          {{ 'templates.contact.form.error_heading' | t }}
+        </h2>
+      </div>
+      <ul class="form-status-list caption-large" role="list">
+        <li>
+          <a href="#ContactForm-email" class="link">
+            {{ form.errors.translated_fields.email | capitalize }}
+            {{ form.errors.messages.email }}
+          </a>
+        </li>
+      </ul>
+    {%- endif -%}
+    
+      <div class="step step-1 active">
+        <fieldset>
+      <h1>Primary Power Feed</h1>
+
+      <div class="input-row-wrap">
+        <div class="field">
+          <label class="dropdown" for="inputConnector">Type</label>
+
+          <select
+            class="dropdown"
+            name="contact[inputConnector]"
+            id="inputConnector"
+          >
+            <option value=" " selected="true">select input type</option>
+            <option value="Main Lug Only (MLO)">Main Lug Only (MLO)</option>
+            <option value="Fused Disconnect">Fused Disconnect</option>
+            <option value="Main Circuit Breaker">Main Circuit Breaker</option>
+            <option value="Cam-Lok Input">Cam-Lok Input</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="dropdown" for="inputVoltage">Voltage</label>
+
+          <select
+            class="dropdown"
+            name="contact[inputVoltage]"
+            id="inputVoltage"
+          >
+            <option value=" ">select input voltage</option>
+            <option value="480VAC 3Phase">480VAC 3Phase</option>
+            <option value="600VAC 3Phase">600VAC 3Phase</option>
+            <option value="380VAC 3Phase">380VAC 3Phase</option>
+            <option value="208VAC 3Phase">208VAC 3Phase</option>
+            <option value="240VAC 1Phase">240VAC 1Phase</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="dropdown" for="primaryCurrent">Amps</label>
+          <input
+            class="dropdown"
+            autocomplete="primaryCurrent"
+            type="text"
+            id="primaryCurrent"
+            name="contact[primaryCurrent]"
+            value="{{ form.primaryCurrent }}"
+            placeholder="primary current"
+          >
+        </div>
+      </div>
+      <h2>Primary Receptacles</h2>
+
+      <div class="input-row-wrap">
+        <div class="field form-qty">
+          <label class="dropdown" for="primaryReceptacleQuantity">Qty</label>
+
+          <input
+            class="dropdown"
+            autocomplete="primaryReceptacleQuantity"
+            type="number"
+            id="primaryReceptacleQuantity"
+            name="contact[primaryReceptacleQuantity]"
+            value="{{ form.primaryReceptacleQuantity }}"
+            placeholder="1"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="primaryReceptacleVoltage">Voltage</label>
+
+          <input
+            class="dropdown"
+            autocomplete="primaryReceptacleVoltage"
+            type="text"
+            id="rprimaryReceptacleVoltage"
+            name="contact[primaryReceptacleVoltage]"
+            value="{{ form.primaryReceptacleVoltage }}"
+            placeholder="primary receptacle"
+          >
+        </div>
+        <div class="field">
+          <label class="dropdown" for="primaryReceptacleAmps">Amps</label>
+          <input
+            class="dropdown"
+            autocomplete="primaryReceptacleAmps"
+            type="text"
+            id="primaryReceptacleAmps"
+            name="contact[primaryReceptacleAmps]"
+            value="{{ form.primaryReceptacleAmps }}"
+            placeholder="primary receptacle"
+          >
+        </div>
+
+        <div class="field">
+          <label class="dropdown" for="primaryReceptacleStyle"> Style</label>
+
+          <select
+            class="dropdown"
+            name="contact[primaryReceptacleType]"
+            id="primaryReceptacleType"
+          >
+            <option value=" " selected="true">select receptacle style</option>
+            <option value="Twistlock">Twistlock</option>
+            <option value="Pin &amp; Sleeve">Pin &amp; Sleeve</option>
+            <option value="Decontactor">Decontactor</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+       
+        <button type="button" class="next-btn">Next</button>
+      </div>
+      <div class="step step-2">
+        <p>Step 2</p>
+        <button type="button" class="previous-btn">Prev</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+      <div class="step step-3">
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="name"
+            type="text"
+            id="name"
+            name="contact[name]"
+            value="{{ form.name }}"
+            placeholder="Name"
+          >
+
+          <label class="field__label" for="name"> Your Name</label>
+        </div>
+         <div class="field">
+          <input
+            autocomplete="email"
+            type="email"
+            id="email"
+            class="field__input"
+            name="contact[email]"
+            placeholder="Email"
+            value="{{ form.email }}"
+            aria-required="true"
+            {% if form.errors contains 'email' %}
+              aria-invalid="true"
+              aria-describedby="ContactForm-email-error"
+            {% endif %}
+          >
+          <label class="field__label" for="email"> <span aria-hidden="true">*</span>Email</label>
+          {%- if form.errors contains 'email' -%}
+            <small class="contact__field-error" id="ContactForm-email-error">
+              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+              <span class="form__message">
+                {%- render 'icon-error' -%}
+                {{- form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email -}}
+              </span>
+            </small>
+          {%- endif -%}
+        </div>
+
+       <div class="field">
+          <input
+            class="field__input"
+            autocomplete="Company Name"
+            type="text"
+            id="company"
+            name="contact[company]"
+            value="{{ form.company }}"
+            placeholder="Company Name"
+          >
+          <label class="field__label" for="company">Business Name</label>
+        </div>
+        <div class="field">
+          <input
+            type="tel"
+            id="phone"
+            class="field__input"
+            autocomplete="tel"
+            name="contact[phone]"
+            pattern="[0-9\-]*"
+            value="{{ form.phone }}"
+            placeholder="Business Phone"
+          >
+          <label class="field__label" for="phone">Phone</label>
+        </div>
+        <button type="button" class="previous-btn">Prev</button>
+        <button type="submit" class="submit-btn"> {{ 'templates.contact.form.send' | t }} </button>
+      </div>
+  {% endform %}
+        
+  </div>
+</section>
+
+<script>
+  const steps = Array.from(document.querySelectorAll("form .step"));
+   const nextBtn = document.querySelectorAll("form .next-btn");
+   const prevBtn = document.querySelectorAll("form .previous-btn");
+   const form = document.querySelector("form");
+   nextBtn.forEach((button) => {
+    button.addEventListener("click", () => {
+     changeStep("next");
+    });
+   });
+   prevBtn.forEach((button) => {
+    button.addEventListener("click", () => {
+     changeStep("prev");
+    });
+   });
+   form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const inputs = [];
+    form.querySelectorAll("input").forEach((input) => {
+     const { name, value } = input;
+     inputs.push({ name, value });
+    });
+    console.log(inputs);
+    form.reset();
+   });
+   function changeStep(btn) {
+    let index = 0;
+    const active = document.querySelector(".active");
+    index = steps.indexOf(active);
+    steps[index].classList.remove("active");
+    if (btn === "next") {
+     index++;
+    } else if (btn === "prev") {
+     index--;
+    }
+    steps[index].classList.add("active");
+   }
+</script>
+
+{% endcomment %}

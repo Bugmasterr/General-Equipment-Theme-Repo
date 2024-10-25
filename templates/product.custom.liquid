@@ -1,0 +1,31 @@
+
+{%  if product.available %}
+  {% comment %}
+  <div style="position:absolute; top:20; left:0;right:0;bottom:0;background:grey;height:100%; width:100%; z-index:9999999;">
+     <div style="display:flex; height:auto;">
+    {% for image in product.images %}
+      <div style="max-width:20%;height:5vh;">
+        <img src="{{ image | image_url }}" style="width:100%; height:auto; z-index:9999999;"/>
+      </div>
+        {% endfor %}
+      </div>
+  {% endcomment %}
+    <div style="height:70vh; width: 70%;">
+     <h6><a href="{{ product.vendor | url_for_vendor }}">
+           {{ product.vendor }}</a></h6>
+  {% render 'buy-buttons-custom' %}
+  
+<div style="width:80%; margin: 10rem auto;">
+  
+  {% render 'product-condition' %}
+ 
+  {% render 'custom-shipping' %}
+  <div>
+    {{ product.description }}
+    
+  </div>
+    </div>
+  </div>
+
+</div>
+{% endif %}

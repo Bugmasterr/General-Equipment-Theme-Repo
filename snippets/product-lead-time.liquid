@@ -1,0 +1,70 @@
+{% comment %}
+Usage
+---------------
+Displays time from order to fullfillment.
+
+{% render 'lead-time',
+    block: block,
+    share_link: share_url
+  %}
+{% endcomment %}
+<div style="display:flex; hieght:auto;width:auto">
+{% if product.title contains 'New' %}
+ <h3 style="color:#444;line-height:1; padding:0 2rem;">
+    <strong>Ships Next Day </strong>
+  </h3>
+{% elsif product.title contains 'Used' %}
+ <h3 style="color:#444;line-height:1; padding:0 2rem;">
+    <strong>Ships Next Day</strong>
+  </h3>
+{% else product.title contains 'Reconditioned' %}
+ <h3 style="color:#444;line-height:1; padding:0 2rem;">
+    <strong>Ships in 7 - 10 Business Days </strong>
+  </h3>
+  </div>
+{% endif %}
+
+{% comment %}
+
+{% if product.title contains 'New' %}
+ <h3 style="color:#444;line-height:1; padding:0 2rem;">
+    <strong>Ships next day. </strong>
+  </h3>
+{% elsif product.title contains 'Used' %}
+ <h3 style="color:#444;line-height:1; padding:0 2rem;">
+    <strong>Ships next day.</strong>
+  </h3>
+{% else product.title contains 'Reconditioned' %}
+ <h3 style="color:#444;line-height:1; padding:0 2rem;">
+    <strong>Ships in 7 - 10 business days. </strong>
+  </h3>
+{% endif %}
+
+
+
+  {% if product %}
+  {% if product.description contains 'Reconditioned' %}
+       {% assign product_condition = 'Reconditioned' %} 
+    {% elsif product.title contains 'Reconditioned' %}
+        {% assign product_condition = 'Reconditioned' %}
+  {% elsif product.description contains 'New' %}
+    {% assign product_condition = 'New' %} 
+  {% elsif product.title contains 'New' %}
+   {% assign product_condition = 'New' %} 
+  {% elsif product.description contains 'Used' %}
+    {% assign product_condition = 'Used' %} 
+  {% elsif product.title contains 'Used' %}
+    {% assign product_condition = 'Used' %} 
+  {% else %}
+  {% endif %}
+{% endif %}
+
+{% if product_condition == 'Reconditioned' %}
+  {% assign warranty = 'With One (1) Year 
+      <a href="https://www.gequip.com/pages/one-year-warranty-for-recondioned-remanufactured-goods" target="_blank"
+        >Warranty</a
+      >' %}
+  {% else  %}
+  {% assign warranty = '' %}
+  {% endif %}
+{% endcomment %}

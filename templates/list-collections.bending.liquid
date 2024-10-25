@@ -1,0 +1,10 @@
+
+
+  {% for collection in collections %}
+     
+    {% if collection.url contains 'bending' %}
+     <p>{{ collection.title }}</p>
+      <img src="{{ collection.featured_image }}" />
+     
+   {% endif %}
+  {% endfor %}

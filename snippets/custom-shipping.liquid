@@ -1,0 +1,23 @@
+
+{% assign shipping_time = 'Ready to Ship or Pickup' %}
+  
+{%- if product.metafields['mm-google-shopping'].shipping.value %}
+     {% assign shipping_time = product.metafields['mm-google-shopping'].shipping.value %}
+  {% else %} 
+      {% if product.metafields.global.in_stock.value %}
+        {% assign shipping_time = product.metafields.global.in_stock.value %}
+        {% elsif product.description contains 'New' %}
+        {% assign shipping_time = 'Ready to Ship or Pickup Next Business Day' %}
+        {{ shipping_time }}
+        {% elsif  product.title contains 'New' %}
+      {% assign shipping_time = 'Ready to Ship or Pickup Next Business Day' %}
+      {% else %}
+        {% assign shipping_time = 'Ready to Ship or Pickup in 5 - 7 Business Days' %}
+       {% endif %}
+  {% endif %}
+<div style="background:#A2F5B2; padding:2.5rem 0 1.5rem 0; width: auto;">
+  <h3 style="color:#444;line-height:1; padding:0 2rem;">
+    <strong>{{ shipping_time }}</strong>
+  </h3>
+</div>
+ 

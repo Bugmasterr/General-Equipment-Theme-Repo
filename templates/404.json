@@ -1,10 +1,1 @@
-{
-  "sections": {
-    "main": {
-      "type": "main-404"
-    }
-  },
-  "order": [
-    "main"
-  ]
-}
+{"sections":{"custom_liquid_QL9waH":{"type":"custom-liquid","custom_css":["ul {list-style: none; width: 100%; display: flex; align-content: center; justify-content: center; overflow-x: scroll;}","ul li a {text-align: center; text-decoration: none; color: #888; font-size: 3rem; line-height: 1; font-weight: bolder;}","ul li a:hover {background: #ddd; height: 100px; width: 100px;}"],"settings":{"custom_liquid":"<h1 style=\"text-align:center;\">Can't Find What You Are Looking For?<\/h1>\n<h2 style=\"text-align:center;\">Scroll through some of our other products<\/h2>\n\n<ul>\n  {%- for collection in collections -%}\n    <li>\n      <!--\n        These control flow tags check to see if there is a featured image for a collection.\n        If there isn't one, then we assign the image from the first product in the collection.\n      -->\n      {%- if collection.image -%}\n        {%- assign collection_image = collection.image -%}\n      {%- elsif collection.products.first and collection.products.first.images != empty -%}\n        {%- assign collection_image = collection.products.first.featured_image -%}\n      {%- else -%}\n        {%- assign collection_image = blank -%}\n      {%- endif -%}\n\n      <a  href=\"{{ collection.url }}\">\n        <img src=\"{{ collection_image | img_url: '480x' }}\" alt=\"\"><p>\n        {{ collection.title }}<\/p>\n      <\/a>\n    <\/li>\n  {%- endfor -%}\n\n<\/ul>","color_scheme":"","padding_top":100,"padding_bottom":100}},"main":{"type":"main-404","settings":{}}},"order":["custom_liquid_QL9waH","main"]}

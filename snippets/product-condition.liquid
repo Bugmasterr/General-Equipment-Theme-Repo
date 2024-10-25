@@ -1,0 +1,32 @@
+{% if product %}
+  {% if product.description contains 'Reconditioned' %}
+    <h6 style="margin:0;">Reconditioned</h6>
+    <h6 style="margin:0;">
+      <a href="https://www.gequip.com/pages/one-year-warranty-for-recondioned-remanufactured-goods" target="_blank"
+        >With One Year Operational Warranty</a
+      >
+    </h6>
+    {% elsif product.title contains 'Reconditioned' %}
+    <h6 style="margin:0;">Reconditioned</h6>
+    <h6 style="margin:0;">
+      <a href="https://www.gequip.com/pages/one-year-warranty-for-recondioned-remanufactured-goods" target="_blank"
+        >With One Year Operational Warranty</a
+      >
+    </h6>
+  {% elsif product.description contains 'New' %}
+    <h5>New Surplus</h5>
+  {% elsif product.title contains 'New' %}
+    <h5>New Surplus</h5>
+  {% elsif product.description contains 'Used' %}
+    <h5>Used</h5>
+  {% elsif product.title contains 'Used' %}
+    <h5>Used</h5>
+  {% else %}
+    <h6 style="margin:0;">Reconditioned</h6>
+    <h6 style="margin:0;">
+      <a href="https://www.gequip.com/pages/one-year-warranty-for-recondioned-remanufactured-goods" target="_blank"
+        >With One Year Operational Warranty</a
+      >
+    </h6>
+  {% endif %}
+{% endif %}

@@ -1,0 +1,16 @@
+{% style %}
+  
+      {% endstyle %}
+
+      <div style="display:flex;width:100%; height:100vh; background:red;">
+         <div style="width:80%; height:100%; background:teal;">Product Info</div>
+        <div style="width:30%; height:auto; background:blue;  overflow-y:scroll;">
+        
+      {% for image in product.images %}
+           <div style="width:100%; height:auto; background:pink;">
+        <img src="{{ image | image_url }}" style="width:100%; height:auto; z-index:9999999;"/>
+        </div>
+        {% endfor %}
+        </div>
+       
+      </div>

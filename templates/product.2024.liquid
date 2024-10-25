@@ -1,0 +1,230 @@
+
+<script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+
+{% render 'product-image' %}
+
+
+
+{% render 'metadata-ld-script' %}
+
+{% comment %}
+
+{% render 'product-style' %}
+
+<section
+  id="MainProduct-{{ section.id }}"
+  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  data-section="{{ section.id }}"
+>
+  <div class="page-width">
+    <div class="produuct">
+      {% for image in product.images %}
+         
+ 
+      <div><img src="{{ image | image_url }}" /></div>
+        {% endfor %}
+   {
+    </div>
+      {% render 'product-info' %}
+  </div>
+   
+    <div>
+      {% render 'price' %}
+      {% render 'buy-buttons' %}
+      {% render 'product-add-on' %}
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        function isIE() {
+          const ua = window.navigator.userAgent;
+          const msie = ua.indexOf('MSIE ');
+          const trident = ua.indexOf('Trident/');
+
+          return msie > 0 || trident > 0;
+        }
+
+        if (!isIE()) return;
+        const hiddenInput = document.querySelector('#{{ product_form_id }} input[name="id"]');
+        const noScriptInputWrapper = document.createElement('div');
+        const variantPicker = document.querySelector('variant-selects[data-section="{{ section.id }}"]');
+        noScriptInputWrapper.innerHTML = document.querySelector(
+          '.product-form__noscript-wrapper-{{ section.id }}'
+        ).textContent;
+        variantPicker.outerHTML = noScriptInputWrapper.outerHTML;
+
+        document.querySelector('#Variants-{{ section.id }}').addEventListener('change', function (event) {
+          hiddenInput.value = event.currentTarget.value;
+        });
+      });
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": {{ product.title | json }},
+        "url": {{ request.origin | append: product.url | json }},
+        {% if seo_media -%}
+          "image": [
+            {{ seo_media | image_url: width: 1920 | prepend: "https:" | json }}
+          ],
+        {%- endif %}
+        "description": {{ product.description | strip_html | json }},
+        {% if product.selected_or_first_available_variant.sku != blank -%}
+          "sku": {{ product.selected_or_first_available_variant.sku | json }},
+        {%- endif %}
+        "brand": {
+          "@type": "Brand",
+          "name": {{ product.vendor | json }}
+        },
+        "offers": [
+          {%- for variant in product.variants -%}
+            {
+              "@type" : "Offer",
+              {%- if variant.sku != blank -%}
+                "sku": {{ variant.sku | json }},
+              {%- endif -%}
+              {%- if variant.barcode.size == 12 -%}
+                "gtin12": {{ variant.barcode }},
+              {%- endif -%}
+              {%- if variant.barcode.size == 13 -%}
+                "gtin13": {{ variant.barcode }},
+              {%- endif -%}
+              {%- if variant.barcode.size == 14 -%}
+                "gtin14": {{ variant.barcode }},
+              {%- endif -%}
+              "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+              "price" : {{ variant.price | divided_by: 100.00 | json }},
+              "priceCurrency" : {{ cart.currency.iso_code | json }},
+              "url" : {{ request.origin | append: variant.url | json }}
+            }{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+        ]
+      }
+    </script>
+</section>
+
+/////////////////////////////////////////////////////
+
+{% if product %}
+  {% assign product_title = product.title %}
+  {% assign product_barcode = product.barcode %}
+  
+    {% assign variant = product.variants.first %}
+  
+  {% for variant in product.variants %}
+    {% assign product_weight = variant.weight_in_unit %}
+    {% assign product_sku = variant.sku %}
+    {% assign product_barcode = product.barcode %}
+
+    {% assign product_url = product.url %}
+    {% assign product_vendor = product.vendor %}
+
+    {% assign product_mpn = product.metafields['shopify--facts'].mpn %}
+    {% assign product_condition = product.metafields['mm-google-shopping'].condition.value %}
+
+    {% assign product_quantity = variant.inventory_quantity %}
+    {% assign product_availability = 0 %}
+    {% assign product_price = variant.price %}
+    {% assign product_type = product.type %}
+    {% assign shippingRateZone1 = variant.metafields['mm-google-shopping'].custom_label_0.value %}
+
+    {% assign shippingRateZone_1 = product.metafields['mm-google-shopping'].custom_label_0.value %}
+    {% assign product_description = product.content | strip_html %}
+
+    {% assign product_fulfillment_time = product.metafields['mm-google-shopping'].shipping.value %}
+
+    {% if product_fulfillment_time %}
+      {% if product_weight >= 150 %}
+        {% assign shippingLabel = 'Oversized' %}
+      {% else %}
+
+      {% endif %}
+    {% endif %}
+
+    {% if product_quantity >= 1 %}
+      {% assign product_availability = 'in_stock' %}
+    {% else %}
+      {% assign product_availability = 'not_available' %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+<div class="container" style="max-width:75%; width:75vw;margin-left:auto; padding-left:25%;">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div><img src="{{ product | image_url: width: 600 }}"></div>
+      </div>
+      <div class="row">
+        <div class="col-6">{{ product | image_url: width: 200 | image_tag }}</div>
+        <div class="col-6">{{ product | image_url: width: 200 | image_tag }}</div>
+      </div>
+    </div>
+
+    <div class="col-4" style="background-color:white;">
+      <div class="row">
+        <h4>{{ product.title }}</h4>
+        <h6>{{ product_mpn }}</h6>
+        <h6>Fullfillment: {{ product_fulfillment_time }}</h6>
+        <h6>Availability: {{ product.metafields.global.in_stock }}</h6>
+        <p>shipping rate: {{ shippingRateZone1 }}</p>
+
+        <p>shipping rate: {{ shippingRateZone_1 }}</p>
+        <p>Condition: {{ product_condition }}</p>
+        <p>Weight: {{ product_weight | weight_with_unit }}s</p>
+        <p>{{ product.description }}</p>
+
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <select name="id">
+            {% for variant in product.variants %}
+              {% if variant.available == true %}
+                <option value="{{variant.id}}">
+                  {{ variant.title }} for {{ variant.price | money_with_currency }}
+                </option>
+              {% else %}
+                <option disabled="disabled">{{ variant.title }} - sold out!</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          <input type="submit" name="add" id="add" value="Add to Cart" class="button">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+    {% assign current_variant = product.selected_or_first_available_variant %}
+
+    {% assign availabilities_array = product.selected_or_first_available_variant.store_availabilities %}
+{% for availability in availabilities_array %}
+   {% assign location = availability.location %}
+   <p>{{location.name}}</p>
+  <p> {{ current_variant.inventory_quantity }}</p>
+  {% if availability.location.name == 'Sulphur Warehouse' %} 
+    <p>Ships in in 3 - 5 days 
+    </p>{% endif %}
+{% endfor %}
+<h1>ID:{{ product.inventory_items.id }}</h1>
+
+  <div class="inventoryNote form__label">
+    <h1>
+  {% if current_variant.available %}
+    {% if current_variant.inventory_quantity > 0 and current_variant.inventory_quantity <= 10 %}We have {{ current_variant.inventory_quantity }} in stock
+{% elsif current_variant.inventory_quantity > 10 %}We have more than 10 in stock
+    {% endif %}
+  {% endif %}
+    </h1>
+</div>
+<div id="variant-inventory">
+{% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity > 0 %}
+We currently have {{ product.variants.first.inventory_quantity }} in stock.
+{% endif %}
+</div>
+{%  endcomment %}
+
+
+
+

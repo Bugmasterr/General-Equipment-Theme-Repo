@@ -1,0 +1,84 @@
+{{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+<section id="shopify-section-template--21652485275970__46755a39-e37f-47cd-9de7-0e229e7c6e85" class="shopify-section section" style="padding:20px 0;">
+  <div class="rich-text content-container color-background-1 gradient rich-text--full-width content-container--full-width section-template--21652485275970__46755a39-e37f-47cd-9de7-0e229e7c6e85-padding">
+    <div class="rich-text__wrapper rich-text__wrapper--left page-width">
+      <div class="rich-text__blocks left">
+        <h2 class="rich-text__heading rte inline-richtext hxl scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 1; padding:0;">
+                Customer Service  </h2>
+        <p class="rich-text__caption subtitle subtitle--large scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 2;">
+                Our mission is to make your job easier.
+              </p><p class="rich-text__caption caption-with-letter-spacing caption-with-letter-spacing--large scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 3;">
+                Monday to Friday 9AM - 5PM
+              </p><div class="rich-text__text rte scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 4;">
+                <p>We are available to assist you with any online product questions, shipping concerns, or to help you place your order. </p>
+              </div></div>
+    </div>
+  </div>
+
+</section>
+  
+  <section id="shopify-section-template--21652485275970__image-with-text-support" class="shopify-section section">
+    
+    
+ <div class="section-template--21652485275970__image-with-text-support-padding gradient color-background-1">
+  <div class="page-width">
+    <div class="image-with-text image-with-text--no-overlap isolate scroll-trigger animate--slide-in">
+      <div class="image-with-text__grid grid grid--gapless grid--1-col grid--3-col-tablet">
+        <div class="image-with-text__media-item image-with-text__media-item--small image-with-text__media-item--top grid__item">
+          <div class="image-with-text__media image-with-text__media--adapt global-media-settings background-transparent media" style="padding-bottom: 92.1985815602837%;">
+            <!--
+            <img src="//g-e-test.myshopify.com/cdn/shop/files/help.svg?v=1700495935&amp;width=1500" alt="" 
+              srcset="//g-e-test.myshopify.com/cdn/shop/files/help.svg?v=1700495935&amp;width=165 165w, //g-e-test.myshopify.com/cdn/shop/files/help.svg?v=1700495935&amp;width=360 360w, //g-e-test.myshopify.com/cdn/shop/files/help.svg?v=1700495935&amp;width=535 535w, //g-e-test.myshopify.com/cdn/shop/files/help.svg?v=1700495935&amp;width=750 750w, //g-e-test.myshopify.com/cdn/shop/files/help.svg?v=1700495935&amp;width=1070 1070w, //g-e-test.myshopify.com/cdn/shop/files/help.svg?v=1700495935&amp;width=1500 1500w" width="1500" height="1383" sizes="(min-width: 1600px) 750px,
+              (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" fetchpriority="auto">
+            -->
+           <img src="{{ 'help.svg' | asset_url }}" height="35" alt="custom payments" / >    
+          </div>
+        </div>
+        <div class="image-with-text__text-item grid__item">
+          <div id="ImageWithText--template--21652485275970__image-with-text-support" class="image-with-text__content image-with-text__content--top image-with-text__content--desktop-center image-with-text__content--mobile-center image-with-text__content--adapt content-container background-transparent"><div class="image-with-text__text rte subtitle">
+                    <h1>Contact Us</h1>
+                  </div><h2 class="image-with-text__heading inline-richtext h2">
+                    support@gequip.com
+                  </h2><p class="image-with-text__heading inline-richtext h2">
+                    864.256.6174
+                  </p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</section>
+  <section id="shopify-section-template--21652485275970__7202ec7c-4159-4e7a-a74e-3d37a2928c4f" class="shopify-section section">
+    
+  <div class="rich-text content-container color-background-1 gradient rich-text--full-width content-container--full-width section-template--21652485275970__7202ec7c-4159-4e7a-a74e-3d37a2928c4f-padding" style="padding-bottom:15rem;">
+    <div class="rich-text__wrapper rich-text__wrapper--left page-width">
+      <div class="rich-text__blocks left"><h2 class="rich-text__heading rte inline-richtext h1 scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+                Our Customer Service Team is Here for You.
+              </h2><div class="rich-text__text rte scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 1;">
+                <p>We know sometimes you just need to talk to a real person.</p>
+              </div><div class="rich-text__text rte scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+                <p><a href="mailto:support@gequip.com" title="mailto:support@gequip.com">Contact us today</a></p>
+              </div></div>
+    </div>
+  </div>
+
+
+</section>
+    </main>

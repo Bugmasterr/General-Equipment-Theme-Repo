@@ -1,0 +1,55 @@
+{% comment %}
+    {{ 'component-card.css' | asset_url | stylesheet_tag }}
+    {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+
+    <div class="page-width">
+      <h1>
+      Collection Type
+      </h1>
+      {%- liquid
+        case section.settings.sort
+          when 'products_high', 'products_low'
+            assign collections = collections | sort: 'all_products_count'
+          when 'date', 'date_reversed'
+            assign collections = collections | sort: 'published_at'
+        endcase
+
+        if section.settings.sort == 'products_high' or section.settings.sort == 'date_reversed' or section.settings.sort == 'alphabetical_reversed'
+          assign collections = collections | reverse
+        endif
+
+        assign moduloResult = 28 | modulo: section.settings.columns_desktop
+        assign paginate_by = 30
+        if moduloResult == 0
+          assign paginate_by = 28
+        endif
+      -%}
+
+        <ul>
+          {%- for collection in collections -%}
+            <li>
+                 {{ collection.title | link_to:collection.url }}
+            </li>
+          {%- endfor -%}
+        </ul>
+
+    </div>
+
+
+  {% for product in collections %}
+    {% if product.url contains 'bending' %}
+      <p>{{ product.title | link_to: product.url }}</p>
+    {% endif %}
+  {% endfor %}
+{% endcomment %}
+
+
+  {% for product in collections %}
+    
+    {% if product.url contains 'bending' %}
+      
+  {% for product in collections %}
+    assign products_array = "{{ product.title | link_to: product.url }}',''"
+    {% endfor %}
+   {% endif %}
+  {% endfor %}
