@@ -132,7 +132,7 @@
           "type": "heading",
           "settings": {
             "heading": "<strong>Huge Selection of Tools & Equipment</strong>",
-            "heading_size": "h2"
+            "heading_size": "h1"
           }
         },
         "text_y7cHcf": {
@@ -166,14 +166,14 @@
         "desktop_image_width": "small",
         "layout": "image_first",
         "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
+        "desktop_content_alignment": "center",
         "content_layout": "no-overlap",
         "section_color_scheme": "scheme-1",
         "color_scheme": "scheme-1",
         "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "mobile_content_alignment": "center",
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "featured_collection_MLGk73": {
