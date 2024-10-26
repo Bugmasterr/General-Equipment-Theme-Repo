@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "order": [
     "image_banner",
@@ -20,399 +29,444 @@
     "featured_blog_custom"
   ],
   "sections": {
-    "1713194874ddad7351": {
-      "block_order": [
-        "loox_reviews_loox_card_carousel_section_xBFCRz"
-      ],
+    "image_banner": {
+      "type": "image-banner",
       "blocks": {
-        "loox_reviews_loox_card_carousel_section_xBFCRz": {
+        "heading": {
+          "type": "heading",
           "settings": {
-            "arrows_backgroundColor": "#ffffff",
-            "arrows_iconColor": "#9a9a9a",
-            "borderRadius": 8,
-            "border_active": false,
-            "border_color": "#000000",
-            "border_width": 2,
-            "imageRatio": "0.5625",
-            "itemBackgroundColor": "#ffffff",
-            "itemsPerView": 5,
-            "maxNumberOfCharacters": 300,
-            "maxWidth": 1600,
-            "mobileItemsPerView": 1,
-            "productIds": "",
-            "reviewerNameColor": "#000000",
-            "shadow": "offset-dark",
-            "starsBackgroundColor": "#ffffff",
-            "starsColor": "",
-            "textColor": "#000000"
-          },
-          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-card-carousel-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e"
+            "heading": "<strong>General Equipment & Supply</strong>",
+            "heading_size": "h0"
+          }
+        },
+        "text_J6gjtq": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Remanufacturing Excellence</strong>",
+            "text_style": "caption-with-letter-spacing"
+          }
         }
       },
+      "block_order": [
+        "heading",
+        "text_J6gjtq"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "image": "shopify://shop_images/ges-bg.png",
+        "image_overlay_opacity": 100,
+        "image_height": "small",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-5",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured Products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "",
+        "products_to_show": 10,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_iRTGVy": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Products",
+        "heading_size": "h0",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "featured-products",
+        "products_to_show": 25,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-5",
+        "image_ratio": "square",
+        "image_shape": "round",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "image_with_text_D6cYNM": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_8jf8y3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Huge Selection of Tools & Equipment",
+            "heading_size": "h1"
+          }
+        },
+        "text_y7cHcf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Shop for Tools & Equipment for all Stages of Your Project Life Cycle</p>",
+            "text_style": "body"
+          }
+        },
+        "button_Hk7pP7": {
+          "type": "button",
+          "settings": {
+            "button_label": "Download Catalog",
+            "button_link": "shopify://pages/ges-catalog",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_8jf8y3",
+        "text_y7cHcf",
+        "button_Hk7pP7"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/project-life-cycle.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_MLGk73": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "New Arrivals",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "new",
+        "products_to_show": 10,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_iq9cm8": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_zCqmdf": {
+          "type": "heading",
+          "settings": {
+            "heading": "Temporary Power Units and Portable Distribution Centers",
+            "heading_size": "h0"
+          }
+        },
+        "text_R9HGkw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>General Equipment & Supply will take your specifications and develop a robust and rugged custom designed power distribution center for temporary and portable jobsite power. These distribution load centers can be skid mounted, stationary or provided in two and four wheeled cart designs, depending on  your specific requirement.</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "button_zUqWCc": {
+          "type": "button",
+          "settings": {
+            "button_label": "Find Out More",
+            "button_link": "shopify://pages/custom-power-distribution-centers",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_zCqmdf",
+        "text_R9HGkw",
+        "button_zUqWCc"
+      ],
+      "custom_css": [
+        "h2 {font-size: 3rem !important; color: #222 !important;}",
+        "@media (min-width: 1280px) {h2 {font-size: 7rem !important; font-weight: bolder; }}"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_MkBYUG": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Threading Machines",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "conduit-threading-machines",
+        "products_to_show": 5,
+        "columns_desktop": 5,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_mGtMeJ": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Bending Machines",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "conduit-benders",
+        "products_to_show": 10,
+        "columns_desktop": 5,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-2",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1713194874ddad7351": {
+      "type": "apps",
       "settings": {
         "include_margins": false
-      },
-      "type": "apps"
+      }
+    },
+    "featured_collection_FtA7t4": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Crimping Dies",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "wire-crimping-dies",
+        "products_to_show": 5,
+        "columns_desktop": 5,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "17248578247d7b63b2": {
-      "block_order": [
-        "loox_reviews_loox_card_carousel_section_TKy4M9"
-      ],
-      "blocks": {
-        "loox_reviews_loox_card_carousel_section_TKy4M9": {
-          "settings": {
-            "arrows_backgroundColor": "#ffffff",
-            "arrows_iconColor": "#9a9a9a",
-            "borderRadius": 25,
-            "border_active": false,
-            "border_color": "#000000",
-            "border_width": 2,
-            "imageRatio": "0.72",
-            "itemBackgroundColor": "#ffffff",
-            "itemsPerView": 5,
-            "maxNumberOfCharacters": 100,
-            "maxWidth": 1600,
-            "mobileItemsPerView": 1,
-            "productIds": "",
-            "reviewerNameColor": "#000000",
-            "shadow": "offset-dark",
-            "starsBackgroundColor": "#ffffff",
-            "starsColor": "",
-            "textColor": "#000000"
-          },
-          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-card-carousel-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e"
-        }
-      },
+      "type": "apps",
       "disabled": true,
       "settings": {
         "include_margins": true
-      },
-      "type": "apps"
+      }
     },
     "17248583582ad7291f": {
+      "type": "apps",
       "settings": {
         "include_margins": true
-      },
-      "type": "apps"
+      }
     },
-    "172485886844bac7e4": {
-      "block_order": [
-        "loox_reviews_loox_testimonial_carousel_section_UEqRq9"
-      ],
+    "image_with_text_LayYTr": {
+      "type": "image-with-text",
       "blocks": {
-        "loox_reviews_loox_testimonial_carousel_section_UEqRq9": {
+        "heading_UNFFe4": {
+          "type": "heading",
           "settings": {
-            "arrows_hideOnMobile": true,
-            "arrows_iconColor": "#000000",
-            "autoplay_active": true,
-            "autoplay_duration": 2,
-            "desktopFontSize": 38,
-            "maxNumberOfCharacters": 100,
-            "maxWidth": 1600,
-            "mobileFontSize": 20,
-            "pagination_active": true,
-            "pagination_dotColor": "#000000",
-            "pagination_selectedDotColor": "#000000",
-            "productIds": "",
-            "quoteMarkIcon": "none",
-            "quotesIconColor": "#eaeaea",
-            "reviewerNameColor": "#000000",
-            "starsColor": "",
-            "textColor": "#000000"
-          },
-          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-testimonial-carousel-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e"
+            "heading": "Customized Containers",
+            "heading_size": "h0"
+          }
+        },
+        "text_wtrFtL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Design a Custom Office, Breakroom, Toolroom, Guard-Shack or Turnstile for Your jobsite.</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "button_8QNEcd": {
+          "type": "button",
+          "settings": {
+            "button_label": "Design One Today",
+            "button_link": "shopify://pages/custom-containers",
+            "button_style_secondary": false
+          }
         }
       },
+      "block_order": [
+        "heading_UNFFe4",
+        "text_wtrFtL",
+        "button_8QNEcd"
+      ],
+      "custom_css": [
+        "h2 {font-size: 2.5rem;}",
+        "@media (min-width: 980px) {h2 {font-size: 4.5rem; }}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/container-banner-01.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "right",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_aJbak3": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 48,
+        "padding_bottom": 0
+      }
+    },
+    "172485886844bac7e4": {
+      "type": "apps",
       "custom_css": [
         "#shopify-block-loox_reviews_loox_testimonial_carousel_section_UEqRq9 .shopify-block .shopify-app-block {padding-top: 100px; padding-bottom: 100px !important;}"
       ],
       "settings": {
         "include_margins": true
-      },
-      "type": "apps"
+      }
     },
     "custom_liquid_TfgK9r": {
+      "type": "custom-liquid",
       "settings": {
-        "color_scheme": "",
         "custom_liquid": "",
-        "padding_bottom": 0,
-        "padding_top": 100
-      },
-      "type": "custom-liquid"
-    },
-    "custom_liquid_aJbak3": {
-      "settings": {
         "color_scheme": "",
-        "custom_liquid": "",
-        "padding_bottom": 0,
-        "padding_top": 48
-      },
-      "type": "custom-liquid"
-    },
-    "featured_blog_custom": {
-      "settings": {
-        "blog": "news",
-        "color_scheme": "",
-        "columns_desktop": 3,
-        "heading": "Learning Center",
-        "heading_size": "h2",
-        "padding_bottom": 100,
         "padding_top": 100,
-        "post_limit": 3,
-        "show_author": false,
-        "show_date": false,
-        "show_image": true,
-        "show_view_all": true
-      },
-      "type": "featured-blog-custom"
-    },
-    "featured_collection": {
-      "disabled": true,
-      "settings": {
-        "collection": "",
-        "color_scheme": "scheme-1",
-        "columns_desktop": 5,
-        "columns_mobile": "1",
-        "description": "",
-        "description_style": "subtitle",
-        "enable_desktop_slider": false,
-        "enable_quick_add": false,
-        "full_width": true,
-        "heading_size": "h2",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "padding_bottom": 36,
-        "padding_top": 44,
-        "products_to_show": 10,
-        "show_description": false,
-        "show_rating": false,
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_view_all": true,
-        "swipe_on_mobile": false,
-        "title": "Featured Products",
-        "view_all_style": "link"
-      },
-      "type": "featured-collection"
-    },
-    "featured_collection_FtA7t4": {
-      "settings": {
-        "collection": "wire-crimping-dies",
-        "color_scheme": "scheme-1",
-        "columns_desktop": 5,
-        "columns_mobile": "1",
-        "description": "",
-        "description_style": "body",
-        "enable_desktop_slider": true,
-        "enable_quick_add": false,
-        "full_width": false,
-        "heading_size": "h2",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "padding_bottom": 36,
-        "padding_top": 36,
-        "products_to_show": 5,
-        "show_description": false,
-        "show_rating": false,
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_view_all": true,
-        "swipe_on_mobile": false,
-        "title": "Crimping Dies",
-        "view_all_style": "link"
-      },
-      "type": "featured-collection"
-    },
-    "featured_collection_MLGk73": {
-      "settings": {
-        "collection": "new",
-        "color_scheme": "scheme-1",
-        "columns_desktop": 5,
-        "columns_mobile": "1",
-        "description": "",
-        "description_style": "body",
-        "enable_desktop_slider": false,
-        "enable_quick_add": false,
-        "full_width": true,
-        "heading_size": "h2",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "padding_bottom": 36,
-        "padding_top": 36,
-        "products_to_show": 10,
-        "show_description": false,
-        "show_rating": false,
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_view_all": true,
-        "swipe_on_mobile": false,
-        "title": "New Arrivals",
-        "view_all_style": "link"
-      },
-      "type": "featured-collection"
-    },
-    "featured_collection_MkBYUG": {
-      "settings": {
-        "collection": "conduit-threading-machines",
-        "color_scheme": "",
-        "columns_desktop": 5,
-        "columns_mobile": "1",
-        "description": "",
-        "description_style": "body",
-        "enable_desktop_slider": false,
-        "enable_quick_add": false,
-        "full_width": false,
-        "heading_size": "h2",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "padding_bottom": 36,
-        "padding_top": 36,
-        "products_to_show": 5,
-        "show_description": false,
-        "show_rating": false,
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_view_all": true,
-        "swipe_on_mobile": false,
-        "title": "Threading Machines",
-        "view_all_style": "link"
-      },
-      "type": "featured-collection"
-    },
-    "featured_collection_iRTGVy": {
-      "settings": {
-        "collection": "featured-products",
-        "color_scheme": "scheme-5",
-        "columns_desktop": 5,
-        "columns_mobile": "2",
-        "description": "",
-        "description_style": "body",
-        "enable_desktop_slider": false,
-        "enable_quick_add": false,
-        "full_width": true,
-        "heading_size": "h0",
-        "image_ratio": "square",
-        "image_shape": "round",
-        "padding_bottom": 100,
-        "padding_top": 100,
-        "products_to_show": 25,
-        "show_description": false,
-        "show_rating": false,
-        "show_secondary_image": false,
-        "show_vendor": true,
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "title": "Featured Products",
-        "view_all_style": "link"
-      },
-      "type": "featured-collection"
-    },
-    "featured_collection_mGtMeJ": {
-      "settings": {
-        "collection": "conduit-benders",
-        "color_scheme": "scheme-2",
-        "columns_desktop": 5,
-        "columns_mobile": "2",
-        "description": "",
-        "description_style": "body",
-        "enable_desktop_slider": false,
-        "enable_quick_add": false,
-        "full_width": false,
-        "heading_size": "h2",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "padding_bottom": 36,
-        "padding_top": 36,
-        "products_to_show": 10,
-        "show_description": false,
-        "show_rating": false,
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_view_all": true,
-        "swipe_on_mobile": false,
-        "title": "Bending Machines",
-        "view_all_style": "link"
-      },
-      "type": "featured-collection"
-    },
-    "image_banner": {
-      "block_order": [
-        "heading",
-        "text_J6gjtq"
-      ],
-      "blocks": {
-        "heading": {
-          "settings": {
-            "heading": "<strong>General Equipment & Supply<\/strong>",
-            "heading_size": "h2"
-          },
-          "type": "heading"
-        },
-        "text_J6gjtq": {
-          "settings": {
-            "text": "<strong>Remanufacturing Excellence<\/strong>",
-            "text_style": "subtitle"
-          },
-          "type": "text"
-        }
-      },
-      "custom_css": [
-        "#Banner-template--17731386540275__image_banner::after {background: linear-gradient( 180deg, rgba(247, 34, 36, 1), rgba(247, 34, 36, 0.75) 0%, rgba(255, 255, 255, 0.25) 10%, rgba(62, 84, 168, 0.5) 90%, rgba(62, 84, 168, 1) 99% );}",
-        ".banner__box h2,.banner__box .subtitle p {color: #fff; text-shadow: 4px 4px 10px #222;}",
-        ".banner__box h2 {font-size: 5rem; line-height: 0.5;}",
-        ".banner__box .subtitle p {line-height: 0.5; font-size: 2rem;}",
-        "@media (min-width: 768px) {.banner__box h2 {padding-bottom: 0rem; } .banner__box .subtitle p {font-size: 10rem; line-height: 0.95; }}"
-      ],
-      "settings": {
-        "color_scheme": "scheme-5",
-        "desktop_content_alignment": "center",
-        "desktop_content_position": "bottom-center",
-        "image": "shopify:\/\/shop_images\/ges-bg.png",
-        "image_behavior": "none",
-        "image_height": "large",
-        "image_overlay_opacity": 100,
-        "mobile_content_alignment": "center",
-        "show_text_below": false,
-        "show_text_box": false,
-        "stack_images_on_mobile": false
-      },
-      "type": "image-banner"
+        "padding_bottom": 0
+      }
     },
     "image_banner_NQAmaE": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_RY6yfy": {
+          "type": "heading",
+          "settings": {
+            "heading": "Remanufactured Excellence Delivered !",
+            "heading_size": "h1"
+          }
+        },
+        "text_4wVyrR": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_qJYtdN": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
       "block_order": [
         "heading_RY6yfy",
         "text_4wVyrR",
         "buttons_qJYtdN"
       ],
-      "blocks": {
-        "buttons_qJYtdN": {
-          "disabled": true,
-          "settings": {
-            "button_label_1": "Button label",
-            "button_label_2": "Button label",
-            "button_link_1": "",
-            "button_link_2": "",
-            "button_style_secondary_1": false,
-            "button_style_secondary_2": false
-          },
-          "type": "buttons"
-        },
-        "heading_RY6yfy": {
-          "settings": {
-            "heading": "Remanufactured Excellence Delivered !",
-            "heading_size": "h1"
-          },
-          "type": "heading"
-        },
-        "text_4wVyrR": {
-          "disabled": true,
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          },
-          "type": "text"
-        }
-      },
       "custom_css": [
         "#Banner-template--17731386540275__image_banner_NQAmaE::after {background: linear-gradient( 180deg, rgba(247, 34, 36, 1), rgba(247, 34, 36, 0.75) 0%, rgba(255, 255, 255, 0.25) 10%, rgba(62, 84, 168, 0.5) 90%, rgba(62, 84, 168, 1) 99% );}",
         "h2 {font-size: 2.75rem; color: white;}",
@@ -420,168 +474,35 @@
         "@media (min-width: 768px) {h2 {font-size: 7.5rem; } .banner__box {background: rgba(62, 84, 168, 0); }}"
       ],
       "settings": {
-        "color_scheme": "",
-        "desktop_content_alignment": "center",
-        "desktop_content_position": "middle-center",
-        "image": "shopify:\/\/shop_images\/knaack-boxes-on-the-move.png",
-        "image_behavior": "none",
-        "image_height": "adapt",
+        "image": "shopify://shop_images/knaack-boxes-on-the-move.png",
         "image_overlay_opacity": 100,
-        "mobile_content_alignment": "center",
-        "show_text_below": true,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
         "show_text_box": false,
-        "stack_images_on_mobile": true
-      },
-      "type": "image-banner"
-    },
-    "image_with_text_D6cYNM": {
-      "block_order": [
-        "heading_8jf8y3",
-        "text_y7cHcf",
-        "button_Hk7pP7"
-      ],
-      "blocks": {
-        "button_Hk7pP7": {
-          "settings": {
-            "button_label": "Download Catalog",
-            "button_link": "shopify:\/\/pages\/ges-catalog",
-            "button_style_secondary": false
-          },
-          "type": "button"
-        },
-        "heading_8jf8y3": {
-          "settings": {
-            "heading": "Huge Selection of Tools & Equipment",
-            "heading_size": "h1"
-          },
-          "type": "heading"
-        },
-        "text_y7cHcf": {
-          "settings": {
-            "text": "<p>Shop for Tools & Equipment for all Stages of Your Project Life Cycle<\/p>",
-            "text_style": "body"
-          },
-          "type": "text"
-        }
-      },
-      "settings": {
-        "color_scheme": "scheme-1",
-        "content_layout": "no-overlap",
-        "desktop_content_alignment": "left",
-        "desktop_content_position": "middle",
-        "desktop_image_width": "medium",
-        "height": "adapt",
-        "image": "shopify:\/\/shop_images\/project-life-cycle.png",
-        "image_behavior": "none",
-        "layout": "image_first",
-        "mobile_content_alignment": "left",
-        "padding_bottom": 36,
-        "padding_top": 36,
-        "section_color_scheme": "scheme-1"
-      },
-      "type": "image-with-text"
-    },
-    "image_with_text_LayYTr": {
-      "block_order": [
-        "heading_UNFFe4",
-        "text_wtrFtL",
-        "button_8QNEcd"
-      ],
-      "blocks": {
-        "button_8QNEcd": {
-          "settings": {
-            "button_label": "Design One Today",
-            "button_link": "shopify:\/\/pages\/custom-containers",
-            "button_style_secondary": false
-          },
-          "type": "button"
-        },
-        "heading_UNFFe4": {
-          "settings": {
-            "heading": "Customized Containers",
-            "heading_size": "h0"
-          },
-          "type": "heading"
-        },
-        "text_wtrFtL": {
-          "settings": {
-            "text": "<p>Design a Custom Office, Breakroom, Toolroom, Guard-Shack or Turnstile for Your jobsite.<\/p>",
-            "text_style": "subtitle"
-          },
-          "type": "text"
-        }
-      },
-      "custom_css": [
-        "h2 {font-size: 2.5rem;}",
-        "@media (min-width: 980px) {h2 {font-size: 4.5rem; }}"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "content_layout": "no-overlap",
-        "desktop_content_alignment": "right",
-        "desktop_content_position": "middle",
-        "desktop_image_width": "medium",
-        "height": "adapt",
-        "image": "shopify:\/\/shop_images\/container-banner-01.png",
-        "image_behavior": "none",
-        "layout": "image_first",
-        "mobile_content_alignment": "left",
-        "padding_bottom": 36,
-        "padding_top": 36,
-        "section_color_scheme": "scheme-1"
-      },
-      "type": "image-with-text"
-    },
-    "image_with_text_iq9cm8": {
-      "block_order": [
-        "heading_zCqmdf",
-        "text_R9HGkw",
-        "button_zUqWCc"
-      ],
-      "blocks": {
-        "button_zUqWCc": {
-          "settings": {
-            "button_label": "Find Out More",
-            "button_link": "shopify:\/\/pages\/custom-power-distribution-centers",
-            "button_style_secondary": false
-          },
-          "type": "button"
-        },
-        "heading_zCqmdf": {
-          "settings": {
-            "heading": "Temporary Power Units and Portable Distribution Centers",
-            "heading_size": "h0"
-          },
-          "type": "heading"
-        },
-        "text_R9HGkw": {
-          "settings": {
-            "text": "<p>General Equipment & Supply will take your specifications and develop a robust and rugged custom designed power distribution center for temporary and portable jobsite power. These distribution load centers can be skid mounted, stationary or provided in two and four wheeled cart designs, depending on  your specific requirement.<\/p>",
-            "text_style": "subtitle"
-          },
-          "type": "text"
-        }
-      },
-      "custom_css": [
-        "h2 {font-size: 3rem !important; color: #222 !important;}",
-        "@media (min-width: 1280px) {h2 {font-size: 7rem !important; font-weight: bolder; }}"
-      ],
-      "settings": {
+        "desktop_content_alignment": "center",
         "color_scheme": "",
-        "content_layout": "no-overlap",
-        "desktop_content_alignment": "left",
-        "desktop_content_position": "top",
-        "desktop_image_width": "medium",
-        "height": "adapt",
-        "image": "shopify:\/\/shop_images\/20240328_122910-crop.jpg",
         "image_behavior": "none",
-        "layout": "text_first",
-        "mobile_content_alignment": "left",
-        "padding_bottom": 36,
-        "padding_top": 36,
-        "section_color_scheme": ""
-      },
-      "type": "image-with-text"
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "featured_blog_custom": {
+      "type": "featured-blog-custom",
+      "settings": {
+        "heading": "Learning Center",
+        "heading_size": "h2",
+        "blog": "news",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
     }
   }
 }
