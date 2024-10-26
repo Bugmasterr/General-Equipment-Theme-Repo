@@ -1,1 +1,52 @@
-{"sections":{"main":{"type":"main-search","settings":{"columns_desktop":4,"image_ratio":"square","image_shape":"default","show_secondary_image":false,"show_vendor":true,"show_rating":false,"enable_filtering":true,"filter_type":"horizontal","enable_sorting":true,"article_show_date":false,"article_show_author":false,"columns_mobile":"1","padding_top":0,"padding_bottom":28}},"contact_form_mWKp3E":{"type":"contact-form","settings":{"heading":"Contact form","heading_size":"h1","color_scheme":"","padding_top":36,"padding_bottom":36}},"featured_blog_k6g9UH":{"type":"featured-blog","disabled":true,"settings":{"heading":"Learn","heading_size":"h1","blog":"","post_limit":3,"columns_desktop":3,"color_scheme":"","show_image":true,"show_date":true,"show_author":false,"show_view_all":true,"padding_top":36,"padding_bottom":36}}},"order":["main","contact_form_mWKp3E","featured_blog_k6g9UH"]}
+{
+  "order": ["main", "contact_form_mWKp3E", "featured_blog_k6g9UH"],
+  "sections": {
+    "contact_form_mWKp3E": {
+      "settings": {
+        "color_scheme": "",
+        "heading": "Contact form",
+        "heading_size": "h1",
+        "padding_bottom": 36,
+        "padding_top": 36
+      },
+      "type": "contact-form"
+    },
+    "featured_blog_k6g9UH": {
+      "disabled": true,
+      "settings": {
+        "blog": "",
+        "color_scheme": "",
+        "columns_desktop": 3,
+        "heading": "Learn",
+        "heading_size": "h1",
+        "padding_bottom": 36,
+        "padding_top": 36,
+        "post_limit": 3,
+        "show_author": false,
+        "show_date": true,
+        "show_image": true,
+        "show_view_all": true
+      },
+      "type": "featured-blog"
+    },
+    "main": {
+      "settings": {
+        "article_show_author": false,
+        "article_show_date": false,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "filter_type": "horizontal",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "padding_bottom": 28,
+        "padding_top": 0,
+        "show_rating": false,
+        "show_secondary_image": false,
+        "show_vendor": true
+      },
+      "type": "main-search"
+    }
+  }
+}

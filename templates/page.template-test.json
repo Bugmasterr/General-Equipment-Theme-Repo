@@ -1,1 +1,17 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"contact_form_QDebbk":{"type":"contact-form-power-dist-center","settings":{}}},"order":["main","contact_form_QDebbk"]}
+{
+  "order": ["main", "contact_form_QDebbk"],
+  "sections": {
+    "contact_form_QDebbk": {
+      "settings": {},
+      "type": "contact-form-power-dist-center"
+    },
+    "main": {
+      "disabled": true,
+      "settings": {
+        "padding_bottom": 28,
+        "padding_top": 28
+      },
+      "type": "main-page"
+    }
+  }
+}

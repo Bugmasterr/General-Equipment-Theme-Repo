@@ -1,1 +1,35 @@
-{"sections":{"main":{"type":"main-product-custom","blocks":{"title":{"type":"title","settings":{}},"price":{"type":"price","settings":{}},"lead-time":{"type":"lead-time","settings":{}},"product-disclaimer":{"type":"product-disclaimer","settings":{}}},"block_order":["title","price","lead-time","product-disclaimer"],"settings":{}}},"order":["main"]}
+{
+  "order": [
+    "main"
+  ],
+  "sections": {
+    "main": {
+      "block_order": [
+        "title",
+        "price",
+        "lead-time",
+        "product-disclaimer"
+      ],
+      "blocks": {
+        "lead-time": {
+          "settings": {},
+          "type": "lead-time"
+        },
+        "price": {
+          "settings": {},
+          "type": "price"
+        },
+        "product-disclaimer": {
+          "settings": {},
+          "type": "product-disclaimer"
+        },
+        "title": {
+          "settings": {},
+          "type": "title"
+        }
+      },
+      "settings": {},
+      "type": "main-product-custom"
+    }
+  }
+}
