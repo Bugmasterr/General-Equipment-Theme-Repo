@@ -22,10 +22,22 @@
     }
   {%- endstyle -%}
 {%- endif -%}
-
+{% style %}
+  #Banner-{{ section.id }} .banner__media {
+    max-height: 50%;
+  }
+{% endstyle %}
+{% style %}
+  .banner__text,
+  .banner__heading {
+  }
+{% endstyle %}
 {%- style -%}
   #Banner-{{ section.id }}::after {
-    opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+    background-color: #334fb4;
+    opacity: 100%;
+    mix-blend-mode: multiply;
+    max-height: 50%;
   }
 {%- endstyle -%}
 
