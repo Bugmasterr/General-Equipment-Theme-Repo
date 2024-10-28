@@ -50,7 +50,7 @@
         "text_PzGPP4"
       ],
       "custom_css": [
-        ".banner {height: 16rem;}"
+        ".banner {height: 16rem; max-width: var(--max-width); margin: auto;}"
       ],
       "settings": {
         "image": "shopify://shop_images/ges-bg.png",

@@ -221,7 +221,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "div {--max-width: 1000px;}",
+      "div {--max-width: 1200px;}",
       "@media (min-width: 768px) {body {width: 95%; margin: 0 auto; }}",
       ".badge {display: none;}"
     ]
