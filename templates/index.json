@@ -50,7 +50,7 @@
         "text_PzGPP4"
       ],
       "custom_css": [
-        ".banner {height: 16rem; max-width: 900px; margin: auto;}"
+        ".banner {height: 16rem; max-width: var(--max-width); margin: auto;}"
       ],
       "settings": {
         "image": "shopify://shop_images/ges-bg.png",
@@ -98,7 +98,7 @@
     "featured_collection_iRTGVy": {
       "type": "featured-collection",
       "custom_css": [
-        "div {max-width: 900px; margin: auto;}"
+        "div {max-width: var(--max-width); margin: auto;}"
       ],
       "settings": {
         "title": "Featured Products",
@@ -158,7 +158,7 @@
         "button_Hk7pP7"
       ],
       "custom_css": [
-        "div {max-width: 900px; margin: auto;}",
+        "div {max-width: var(--max-width); margin: auto;}",
         ".image-with-text__heading {color: #334fb4;}",
         ".button {background: #334fb4;}"
       ],
@@ -181,7 +181,7 @@
     "featured_collection_MLGk73": {
       "type": "featured-collection",
       "custom_css": [
-        "div {max-width: 900px; margin: auto;}"
+        "div {max-width: var(--max-width); margin: auto;}"
       ],
       "settings": {
         "title": "New Arrivals",
@@ -243,7 +243,7 @@
       "custom_css": [
         "h2 {font-size: 3rem !important; color: #222 !important;}",
         "@media (min-width: 1280px) {h2 {font-size: 7rem !important; font-weight: bolder; }}",
-        "div {max-width: 900px; margin: auto;}"
+        "div {max-width: var(--max-width); margin: auto;}"
       ],
       "settings": {
         "height": "adapt",
@@ -263,7 +263,7 @@
     "featured_collection_MkBYUG": {
       "type": "featured-collection",
       "custom_css": [
-        "div {max-width: 900px; margin: auto;}"
+        "div {max-width: var(--max-width); margin: auto;}"
       ],
       "settings": {
         "title": "Threading Machines",
@@ -294,7 +294,7 @@
     "featured_collection_mGtMeJ": {
       "type": "featured-collection",
       "custom_css": [
-        "div {max-width: 900px; margin: auto;}"
+        "div {max-width: var(--max-width); margin: auto;}"
       ],
       "settings": {
         "title": "Bending Machines",
@@ -331,7 +331,7 @@
     "featured_collection_FtA7t4": {
       "type": "featured-collection",
       "custom_css": [
-        "div {max-width: 900px; margin: auto;}"
+        "div {max-width: var(--max-width); margin: auto;}"
       ],
       "settings": {
         "title": "Crimping Dies",
@@ -406,7 +406,7 @@
       "custom_css": [
         "h2 {font-size: 2.5rem;}",
         "@media (min-width: 980px) {h2 {font-size: 4.5rem; }}",
-        "div {max-width: 900px; margin: auto;}"
+        "div {max-width: var(--max-width); margin: auto;}"
       ],
       "settings": {
         "image": "shopify://shop_images/container-banner-01.png",
@@ -462,7 +462,7 @@
         "buttons_qJYtdN"
       ],
       "custom_css": [
-        "div {max-width: 900px; margin: auto;}",
+        "div {max-width: var(--max-width); margin: auto;}",
         "h2 {font-size: 2.75rem; color: white; margin: auto;}",
         ".banner__box {display: flex; position: absolute;}",
         "@media (min-width: 900px) {h2 {font-size: 4rem; } .banner__box {background: transparent; }}"
@@ -484,7 +484,7 @@
     "featured_blog_custom": {
       "type": "featured-blog-custom",
       "custom_css": [
-        "div {max-width: 900px; margin: auto;}"
+        "div {max-width: var(--max-width); margin: auto;}"
       ],
       "settings": {
         "heading": "Learning Center",

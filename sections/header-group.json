@@ -58,7 +58,7 @@
         "@media only screen and (min-width: 900px) {.support-banner {display: block; }}"
       ],
       "settings": {
-        "custom_liquid": "<div class=\"page-width support-banner\" style=\"height:auto;\">\n<div style=\"\ndisplay:flex;\nflex-direction:row;\nmax-width:900px;\njustify-content: space-around; \nheight:auto; margin:auto;\"\n>\n\n<span><ion-icon name=\"call-outline\"></ion-icon>Main: 1.800.800.6011</span><span>\n<a href=\"mailto:support@gequip.com\">\n<ion-icon name=\"mail-outline\"></ion-icon>support@gequip.com</a></span>\n<span><ion-icon name=\"phone-portrait-outline\"></ion-icon>Sales: 864.256.6174</span></div>\n\n</div>",
+        "custom_liquid": "<div class=\"page-width support-banner\" style=\"height:auto;\">\n<div style=\"\ndisplay:flex;\nflex-direction:row;\nmax-width:var(--max-width);\njustify-content: space-around; \nheight:auto; margin:auto;\"\n>\n\n<span><ion-icon name=\"call-outline\"></ion-icon>Main: 1.800.800.6011</span><span>\n<a href=\"mailto:support@gequip.com\">\n<ion-icon name=\"mail-outline\"></ion-icon>support@gequip.com</a></span>\n<span><ion-icon name=\"phone-portrait-outline\"></ion-icon>Sales: 864.256.6174</span></div>\n\n</div>",
         "color_scheme": "",
         "padding_top": 20,
         "padding_bottom": 16
@@ -67,7 +67,7 @@
     "header": {
       "type": "header-custom",
       "custom_css": [
-        ".header {max-width: 900px; justify-content: space-around; margin: auto;}"
+        ".header {max-width: var(--max-width); justify-content: space-around; margin: auto;}"
       ],
       "settings": {
         "logo_position": "middle-left",
