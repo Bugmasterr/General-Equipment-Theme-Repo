@@ -22,9 +22,7 @@
     "17248578247d7b63b2",
     "17248583582ad7291f",
     "image_with_text_LayYTr",
-    "custom_liquid_aJbak3",
     "172485886844bac7e4",
-    "custom_liquid_TfgK9r",
     "image_banner_NQAmaE",
     "featured_blog_custom"
   ],
@@ -39,20 +37,20 @@
             "heading_size": "h1"
           }
         },
-        "text_J6gjtq": {
+        "text_PzGPP4": {
           "type": "text",
           "settings": {
-            "text": "<strong>Remanufacturing Excellence</strong>",
-            "text_style": "caption-with-letter-spacing"
+            "text": "Remanufacturing Excellence",
+            "text_style": "body"
           }
         }
       },
       "block_order": [
         "heading",
-        "text_J6gjtq"
+        "text_PzGPP4"
       ],
       "custom_css": [
-        ".banner {height: 16rem;}"
+        ".banner {height: 16rem; max-width: 900px; margin: auto;}"
       ],
       "settings": {
         "image": "shopify://shop_images/ges-bg.png",
@@ -99,6 +97,9 @@
     },
     "featured_collection_iRTGVy": {
       "type": "featured-collection",
+      "custom_css": [
+        "div {max-width: 900px; margin: auto;}"
+      ],
       "settings": {
         "title": "Featured Products",
         "heading_size": "h0",
@@ -108,8 +109,8 @@
         "collection": "featured-products",
         "products_to_show": 10,
         "columns_desktop": 5,
-        "full_width": true,
-        "show_view_all": true,
+        "full_width": false,
+        "show_view_all": false,
         "view_all_style": "link",
         "enable_desktop_slider": false,
         "color_scheme": "scheme-5",
@@ -157,6 +158,7 @@
         "button_Hk7pP7"
       ],
       "custom_css": [
+        "div {max-width: 900px; margin: auto;}",
         ".image-with-text__heading {color: #334fb4;}",
         ".button {background: #334fb4;}"
       ],
@@ -178,6 +180,9 @@
     },
     "featured_collection_MLGk73": {
       "type": "featured-collection",
+      "custom_css": [
+        "div {max-width: 900px; margin: auto;}"
+      ],
       "settings": {
         "title": "New Arrivals",
         "heading_size": "h2",
@@ -237,7 +242,8 @@
       ],
       "custom_css": [
         "h2 {font-size: 3rem !important; color: #222 !important;}",
-        "@media (min-width: 1280px) {h2 {font-size: 7rem !important; font-weight: bolder; }}"
+        "@media (min-width: 1280px) {h2 {font-size: 7rem !important; font-weight: bolder; }}",
+        "div {max-width: 900px; margin: auto;}"
       ],
       "settings": {
         "height": "adapt",
@@ -256,6 +262,9 @@
     },
     "featured_collection_MkBYUG": {
       "type": "featured-collection",
+      "custom_css": [
+        "div {max-width: 900px; margin: auto;}"
+      ],
       "settings": {
         "title": "Threading Machines",
         "heading_size": "h2",
@@ -284,6 +293,9 @@
     },
     "featured_collection_mGtMeJ": {
       "type": "featured-collection",
+      "custom_css": [
+        "div {max-width: 900px; margin: auto;}"
+      ],
       "settings": {
         "title": "Bending Machines",
         "heading_size": "h2",
@@ -318,6 +330,9 @@
     },
     "featured_collection_FtA7t4": {
       "type": "featured-collection",
+      "custom_css": [
+        "div {max-width: 900px; margin: auto;}"
+      ],
       "settings": {
         "title": "Crimping Dies",
         "heading_size": "h2",
@@ -390,7 +405,8 @@
       ],
       "custom_css": [
         "h2 {font-size: 2.5rem;}",
-        "@media (min-width: 980px) {h2 {font-size: 4.5rem; }}"
+        "@media (min-width: 980px) {h2 {font-size: 4.5rem; }}",
+        "div {max-width: 900px; margin: auto;}"
       ],
       "settings": {
         "image": "shopify://shop_images/container-banner-01.png",
@@ -408,15 +424,6 @@
         "padding_bottom": 36
       }
     },
-    "custom_liquid_aJbak3": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "",
-        "padding_top": 48,
-        "padding_bottom": 0
-      }
-    },
     "172485886844bac7e4": {
       "type": "apps",
       "custom_css": [
@@ -426,25 +433,9 @@
         "include_margins": true
       }
     },
-    "custom_liquid_TfgK9r": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "",
-        "padding_top": 100,
-        "padding_bottom": 0
-      }
-    },
     "image_banner_NQAmaE": {
       "type": "image-banner",
       "blocks": {
-        "heading_RY6yfy": {
-          "type": "heading",
-          "settings": {
-            "heading": "Remanufactured Excellence Delivered !",
-            "heading_size": "h1"
-          }
-        },
         "text_4wVyrR": {
           "type": "text",
           "disabled": true,
@@ -467,20 +458,19 @@
         }
       },
       "block_order": [
-        "heading_RY6yfy",
         "text_4wVyrR",
         "buttons_qJYtdN"
       ],
       "custom_css": [
-        "#Banner-template--17731386540275__image_banner_NQAmaE::after {background: linear-gradient( 180deg, rgba(247, 34, 36, 1), rgba(247, 34, 36, 0.75) 0%, rgba(255, 255, 255, 0.25) 10%, rgba(62, 84, 168, 0.5) 90%, rgba(62, 84, 168, 1) 99% );}",
-        "h2 {font-size: 2.75rem; color: white;}",
-        ".banner__box {display: flex; justify-content: center; min-width: 100%; position: absolute; padding: 25% 0 10% 0; bottom: 0; background: rgba(62, 84, 168, 0.5);}",
-        "@media (min-width: 768px) {h2 {font-size: 7.5rem; } .banner__box {background: rgba(62, 84, 168, 0); }}"
+        "div {max-width: 900px; margin: auto;}",
+        "h2 {font-size: 2.75rem; color: white; margin: auto;}",
+        ".banner__box {display: flex; position: absolute;}",
+        "@media (min-width: 900px) {h2 {font-size: 4rem; } .banner__box {background: transparent; }}"
       ],
       "settings": {
         "image": "shopify://shop_images/knaack-boxes-on-the-move.png",
         "image_overlay_opacity": 100,
-        "image_height": "adapt",
+        "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
@@ -493,6 +483,9 @@
     },
     "featured_blog_custom": {
       "type": "featured-blog-custom",
+      "custom_css": [
+        "div {display: none;}"
+      ],
       "settings": {
         "heading": "Learning Center",
         "heading_size": "h2",
@@ -504,8 +497,8 @@
         "show_date": false,
         "show_author": false,
         "show_view_all": true,
-        "padding_top": 100,
-        "padding_bottom": 100
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     }
   }
