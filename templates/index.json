@@ -484,7 +484,7 @@
     "featured_blog_custom": {
       "type": "featured-blog-custom",
       "custom_css": [
-        "div {display: none;}"
+        "div {max-width: 900px; margin: auto;}"
       ],
       "settings": {
         "heading": "Learning Center",

@@ -38,6 +38,9 @@
         "paragraph_DbTNYy",
         "email_form_yzWNUg"
       ],
+      "custom_css": [
+        "div {max-width: 900px; margin: auto;}"
+      ],
       "settings": {
         "color_scheme": "scheme-5",
         "full_width": true,
@@ -109,7 +112,8 @@
       "custom_css": [
         ".policy {display: flex; justify-content: space-around; align-items: center; height: auto; background: #334fb4; color: #fff; padding: 0 15%; margin: 0; list-style: none;}",
         ".policy li {line-height: 1.15; text-align: center; font-size: 1.25rem;}",
-        ".policy a {color: #fff; text-decoration: none; line-height: 1;}"
+        ".policy a {color: #fff; text-decoration: none; line-height: 1;}",
+        "div {max-width: 900px; margin: auto;}"
       ],
       "settings": {
         "custom_liquid": "<ul class=\"policy\">\n\n{%- for policy in shop.policies %}\n  <li style=\"text-transform: capitalize;\"><a href=\"{{policy.url}}\">{{ policy.title }}</a></li>\n{%- endfor %}\n<li><a href=\"https://www.gequip.com/pages/one-year-warranty\" target=\"_blank\">One Year Warranty</a></li>\n</ul>",
@@ -122,7 +126,8 @@
       "type": "custom-liquid",
       "custom_css": [
         ".payment {display: flex; justify-content: space-between; align-items: center; height: auto; padding: 3rem 5% 3rem 5%; width: 100%; background: #334fb4;}",
-        ".copyright p {color: #fff; text-align: left;}"
+        ".copyright p {color: #fff; text-align: left;}",
+        "div {max-width: 900px; margin: auto;}"
       ],
       "settings": {
         "custom_liquid": "<div class=\"payment\">\n\n<div class=\"copyright\">\n\n<p>&copy; 2024 General Equipment & Supply</p>\n\n</div>\n<a href=\"https://www.bbb.org/us/sc/simpsonville/profile/tools/general-equipment-supply-inc-0673-15001519/#sealclick\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://seal-upstatesc.bbb.org/seals/blue-seal-96-50-bbb-15001519.png\" style=\"border: 0;\" alt=\"General Equipment & Supply, Inc BBB Business Review\" /></a>\n\n <span>{% for type in shop.enabled_payment_types -%} {{ type | payment_type_svg_tag }}\n{% endfor %}</i>\n</span>\n</div>",
