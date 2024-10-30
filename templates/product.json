@@ -178,6 +178,7 @@
             "custom_liquid": "{% for variant in product.variants %}\n\n<p  style=\"font-size:5rem; margin:0;padding:0; text-align:right; line-height:1;\"> {{ variant.price | money }}</p>\n{% endfor %}"
           }
         }
+        
       },
       "block_order": [
         "custom_liquid_9wh6PM",

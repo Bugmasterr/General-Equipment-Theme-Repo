@@ -72,7 +72,6 @@
         {% render 'product-media-gallery', variant_images: variant_images %}
       </div>
 
-      
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <product-info
           id="ProductInfo-{{ section.id }}"
@@ -81,7 +80,7 @@
           class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
         >
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
-          
+
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
@@ -102,7 +101,8 @@
                     </h2>
                   </a>
                 </div>
-              
+
+              {% when 'price-shit' %}
               {%- when 'price' -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -189,11 +189,12 @@
                 </p>
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" 
-                    {{ block.shopify_attributes }}>
+                  <div
+                    class="product__description rte quick-add-hidden"
+                    {{ block.shopify_attributes }}
+                  >
                     {{ product.description }}
                   </div>
-              
                 {%- endif -%}
               {%- when 'sku' -%}
                 <p
@@ -330,7 +331,7 @@
                               {%- endfor -%}
                             {%- endif -%}
                           </div>
-                          
+
                         {%- else -%}
                           {%- assign variant_price = product.selected_or_first_available_variant.price
                             | money_with_currency
@@ -468,12 +469,11 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
-                            
-                  {%- when 'discounts' -%}    
-                    <div style="height:auto;width:100%;">                 
-                 
-                      {% render 'custom-discounts' %}
-                  </div>
+
+              {%- when 'discounts' -%}
+                <div style="height:auto;width:100%;">
+                  {% render 'custom-discounts' %}
+                </div>
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -512,7 +512,7 @@
                     </p>
                   </div>
                 {%- endif -%}
-       
+
               {%- when 'complementary' -%}
                 <product-recommendations
                   class="complementary-products quick-add-hidden no-js-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}"
@@ -653,13 +653,10 @@
             {%- endcase -%}
           {%- endfor -%}
 
-                            
-                            
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
             {{ 'products.product.view_full_details' | t }}
             {% render 'icon-arrow' %}
           </a>
-                            
         </product-info>
       </div>
       {%- if section.settings.media_position == 'right' -%}
@@ -830,7 +827,7 @@
         }
       ]
     },
-     {
+    {
       "type": "custom_discounts",
       "name": "t:sections.main-product.blocks.discounts.name",
       "limit": 1
