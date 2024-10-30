@@ -1,0 +1,86 @@
+<div class="product-info-section">
+  <!-- Product Title and SKU -->
+  <div class="title-sku">
+    <h1 class="product-sku">{{ product.selected_or_first_available_variant.sku | default: 'SKU Unavailable' }}</h1>
+    <h2 class="product-title">{{ product.title }}</h2>
+  </div>
+
+  <!-- Vendor and Condition -->
+  <div class="vendor-condition">
+    <h6 class="product-vendor">
+      <a href="{{ product.vendor | url_for_vendor }}">{{ product.vendor }}</a>
+    </h6>
+    <h4 class="product-condition">
+      {% assign product_condition = 'Reconditioned' %}
+      {% if product.description contains 'New' or product.title contains 'New' %}
+        {% assign product_condition = 'New Surplus' %}
+      {% elsif product.description contains 'Used' or product.title contains 'Used' %}
+        {% assign product_condition = 'Used' %}
+      {% endif %}
+      Condition: {{ product_condition }}
+    </h4>
+  </div>
+
+  <!-- Shipping Lead Time -->
+  <div class="shipping-info">
+    {% if product.metafields.ges.lead_time %}
+      {% assign lead_time = product.metafields.ges.lead_time %}
+    {% elsif product_condition == 'Reconditioned' %}
+      {% assign lead_time = 'Ships in 7 - 10 business Days' %}
+    {% else %}
+      {% assign lead_time = 'Ships Next Day' %}
+    {% endif %}
+    <h3>Shipping Lead Time: {{ lead_time }}</h3>
+    <small>* Shipping calculated at checkout</small>
+  </div>
+
+  <!-- Pricing Information -->
+  <div class="pricing-info" id="price-{{ section.id }}">
+    {% assign retail_price = product.selected_or_first_available_variant.compare_at_price %}
+    <p class="actual-price">{{ product.selected_or_first_available_variant.price | money }}</p>
+
+    {% if retail_price > product.selected_or_first_available_variant.price %}
+      <p class="retail-price">
+        Retail Price: <s>{{ retail_price | money }}</s>
+      </p>
+      <p class="savings">Save {{ retail_price | minus: product.selected_or_first_available_variant.price | money }}</p>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  /* Styles can be adjusted later */
+  .product-info-section {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: auto;
+  }
+  .title-sku h1,
+  .title-sku h2 {
+    margin: 0;
+  }
+  .product-vendor a {
+    color: blue;
+    text-decoration: none;
+  }
+  .product-condition {
+    color: salmon;
+  }
+  .shipping-info h3 {
+    color: #444;
+  }
+  .actual-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e53935;
+  }
+  .retail-price {
+    color: #888;
+    font-size: 1rem;
+  }
+  .savings {
+    font-size: 1rem;
+    color: red;
+  }
+</style>
