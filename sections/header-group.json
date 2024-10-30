@@ -44,8 +44,8 @@
       "settings": {
         "custom_liquid": "<div style=\"margin: auto; padding: 10px; position: relative; display: flex; flex-direction: column; width: 95%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px;\">\n            <span style=\"justify-content: center; align-items: center; position: absolute;\"><img src=\"https://img.icons8.com/?size=100&id=9nj2X4YBT2YX&format=png&color=888888\" alt=\"\" style=\"width: 35px;\"></span>\n            <h2 style=\"margin: 0 5px; font-size: 16px; color: #334fb4; line-height: 1em; text-align: center;\">Happy Thanksgiving!</h2>\n            <p style=\"margin: 0 5px; font-size: 16px; color: #888888; text-align: center;\">General Equipment & Supply will be closed on Thanksgiving Day and Black Friday, November 28-29, 2024. </p>\n        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close\" />\n        <span style=\"position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 16px; color: #888888; cursor: pointer;\" class=\"material-symbols-outlined\">\n            close\n        </span>\n    </div>\n\n\n<style>\n    @media (max-width: 600px) {\n        div[style*=\"width: 95%\"] {\n            width: 100%;\n        }\n        div[style*=\"padding: 10px\"] {\n            padding: 5px;\n        }\n        h2[style*=\"font-size: 16px\"] {\n            font-size: 14px;\n        }\n        p[style*=\"font-size: 16px\"] {\n            font-size: 14px;\n        }\n        span[style*=\"font-size: 16px\"] {\n            font-size: 14px;\n        }\n    }\n</style>",
         "color_scheme": "scheme-1",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "padding_top": 4,
+        "padding_bottom": 4
       }
     },
     "custom_liquid_qVLPiK": {
