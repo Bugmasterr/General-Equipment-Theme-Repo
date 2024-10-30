@@ -1,1 +1,110 @@
-{"name":"t:sections.header.name","type":"header","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement-bar-0":{"type":"announcement","settings":{"text":"For help with an order, to confirm availability or for updated shipping rates please contact  email support@gequip.com","link":"mailto:support@gequip.com"}}},"block_order":["announcement-bar-0"],"disabled":true,"settings":{"color_scheme":"scheme-1","show_line_separator":false,"show_social":false,"auto_rotate":false,"change_slides_speed":5,"enable_country_selector":false,"enable_language_selector":false}},"custom_liquid_pDrnYK":{"type":"custom-liquid","disabled":true,"custom_css":["h5 {font-size: 1.5rem; line-height: 1.25; text-align: center; width: 90%; margin: 0 auto; padding: 2rem 0; color: #666;}"],"settings":{"custom_liquid":"<h5>General Equipment & Supply will be closed Monday September 2nd to celebrate <b style=\"padding: 0 0.1rem;\"> Labor Day <\/b><\/h5>","color_scheme":"","padding_top":0,"padding_bottom":0}},"custom_liquid_qVLPiK":{"type":"custom-liquid","custom_css":["ion-icon {padding-right: 8px; font-size: 2rem;}",".support-banner {display: none;}",".support-banner a {color: #333; text-decoration: none;}","@media only screen and (min-width: 992px) {.support-banner {display: block; }}"],"settings":{"custom_liquid":"<div class=\"page-width support-banner\" style=\"height:auto;\">\n<div style=\"\ndisplay:flex;\nflex-direction:row;\njustify-content: space-between; \nheight:auto; \nmax-width:1600px;\">\n\n<span><ion-icon name=\"call-outline\"><\/ion-icon>Main: 1.800.800.6011<\/span><span>\n<a href=\"mailto:support@gequip.com\">\n<ion-icon name=\"mail-outline\"><\/ion-icon>support@gequip.com<\/a><\/span>\n<span><ion-icon name=\"phone-portrait-outline\"><\/ion-icon>Sales: 864.256.6174<\/span><\/div>\n\n<\/div>","color_scheme":"","padding_top":20,"padding_bottom":16}},"header":{"type":"header-custom","custom_css":["header {border: 0px solid #fff !important;}"],"settings":{"logo_position":"middle-left","menu":"main-menu","menu_type_desktop":"mega","sticky_header_type":"on-scroll-up","show_line_separator":true,"color_scheme":"scheme-1","menu_color_scheme":"scheme-1","enable_country_selector":false,"enable_language_selector":false,"mobile_logo_position":"center","margin_bottom":0,"padding_top":0,"padding_bottom":12}},"custom_liquid_FAcfrn":{"type":"custom-liquid","disabled":true,"custom_css":[".banner-msg2 h1,.banner-msg2 h2,h4 {font-weight: bolder; line-height: 1.5; text-align: center; width: auto; margin: 0 auto; padding: 0; color: #fff; display: flex; align-items: center; justify-content: center;}",".banner-msg2 {z-index: 1.5; height: auto; position: relative; top: 0; right: 0; left: 10%; width: 90%; margin: 0; background: linear-gradient( 90deg, rgba(255, 255, 255, 0.75), 20%, rgba(62, 84, 168, 1), rgba(247, 34, 36, 0.75) 90% );}"],"settings":{"custom_liquid":"<div class=\"banner-msg2\" style=\"padding: 3rem 0 3rem 0;\"><h1>SAVE 4% OFF ENTIRE ORDER<\/h1>\n<h4>Use the discount code<strong style=\"padding: 0 0.25rem;\"> LaborDay2024Save4 <\/strong>at checkout<h4>\n<\/div>","color_scheme":"","padding_top":0,"padding_bottom":0}}},"order":["announcement-bar","custom_liquid_pDrnYK","custom_liquid_qVLPiK","header","custom_liquid_FAcfrn"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "For help with an order, to confirm availability or for updated shipping rates please contact  email support@gequip.com",
+            "link": "mailto:support@gequip.com"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_line_separator": false,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "custom_liquid_pDrnYK": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        "h5 {font-size: 1.5rem; line-height: 1.25; text-align: center; width: 90%; margin: 0 auto; padding: 2rem 0; color: #666;}"
+      ],
+      "settings": {
+        "custom_liquid": "<h5>General Equipment & Supply will be closed Monday September 2nd to celebrate <b style=\"padding: 0 0.1rem;\"> Labor Day </b></h5>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_qVLPiK": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "ion-icon {padding-right: 8px; font-size: 2rem;}",
+        ".support-banner {display: none;}",
+        ".support-banner a {color: #333; text-decoration: none;}",
+        "@media only screen and (min-width: 900px) {.support-banner {display: block; }}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"page-width support-banner\" style=\"height:auto;\">\n<div style=\"\ndisplay:flex;\nflex-direction:row;\njustify-content: space-around; \nheight:auto; margin:auto;\"\n>\n\n<span><ion-icon name=\"call-outline\"></ion-icon>Main: 1.800.800.6011</span><span>\n<a href=\"mailto:support@gequip.com\">\n<ion-icon name=\"mail-outline\"></ion-icon>support@gequip.com</a></span>\n<span><ion-icon name=\"phone-portrait-outline\"></ion-icon>Sales: 864.256.6174</span></div>\n\n</div>",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 16
+      }
+    },
+    "header": {
+      "type": "header-custom",
+      "custom_css": [
+        ".header {justify-content: space-around; margin: auto;}"
+      ],
+      "settings": {
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "custom_liquid_FAcfrn": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        ".banner-msg2 h1,.banner-msg2 h2,h4 {font-weight: bolder; line-height: 1.5; text-align: center; width: auto; margin: 0 auto; padding: 0; color: #fff; display: flex; align-items: center; justify-content: center;}",
+        ".banner-msg2 {z-index: 1.5; height: auto; position: relative; top: 0; right: 0; left: 10%; width: 90%; margin: 0; background: linear-gradient( 90deg, rgba(255, 255, 255, 0.75), 20%, rgba(62, 84, 168, 1), rgba(247, 34, 36, 0.75) 90% );}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"banner-msg2\" style=\"padding: 3rem 0 3rem 0;\"><h1>SAVE 4% OFF ENTIRE ORDER</h1>\n<h4>Use the discount code<strong style=\"padding: 0 0.25rem;\"> LaborDay2024Save4 </strong>at checkout<h4>\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "custom_liquid_pDrnYK",
+    "custom_liquid_qVLPiK",
+    "header",
+    "custom_liquid_FAcfrn"
+  ]
+}

@@ -1,1 +1,160 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"newsletter_HA7dhp":{"type":"newsletter","blocks":{"heading_dwxg86":{"type":"heading","settings":{"heading":"Join our Mailing List","heading_size":"h1"}},"paragraph_DbTNYy":{"type":"paragraph","settings":{"text":"<p>Sign up to receive discounts and the latest new deals !<\/p>"}},"email_form_yzWNUg":{"type":"email_form","settings":{}}},"block_order":["heading_dwxg86","paragraph_DbTNYy","email_form_yzWNUg"],"settings":{"color_scheme":"scheme-5","full_width":true,"padding_top":40,"padding_bottom":52}},"footer":{"type":"footer","blocks":{"link_list_LdDPHQ":{"type":"link_list","settings":{"heading":"","menu":"footer-one"}}},"block_order":["link_list_LdDPHQ"],"disabled":true,"settings":{"color_scheme":"scheme-5","newsletter_enable":false,"newsletter_heading":"Subscribe to our emails","enable_follow_on_shop":false,"show_social":false,"enable_country_selector":false,"enable_language_selector":false,"payment_enable":true,"show_policy":true,"margin_top":0,"padding_top":36,"padding_bottom":36}},"custom_liquid_aVfYFP":{"type":"custom-liquid","disabled":true,"custom_css":[".copyright {display: flex; justify-content: space-around; align-items: center; height: auto; width: 100%; background: #334fb4; padding: 2rem 0;}",".copyright p {color: #fff; text-align: center;}"],"settings":{"custom_liquid":"<div class=\"copyright\">\n\n<p>&copy; 2024 General Equipment & Supply<\/p>\n\n<\/div>","color_scheme":"","padding_top":0,"padding_bottom":0}},"custom_liquid_wAN3xP":{"type":"custom-liquid","disabled":true,"custom_css":[".bbb {display: flex; justify-content: space-around; align-items: center; height: auto; width: 100%; margin: 0 auto; padding: 0.5rem 10% 0 3%; background: #334fb4;}","a {text-decoration: none; color: #fff; font-size: 1.5rem;}","ion-icon {color: #fff; padding-right: 0.5rem;}"],"settings":{"custom_liquid":"<div class=\"bbb\">\n<span>{{ shop.address }}<\/span>\n<span><ion-icon name=\"call-outline\"><\/ion-icon>\n<a href=\"\">864.256.6174<\/a><\/span>\n<span><ion-icon name=\"mail-outline\"><\/ion-icon>\n<a href=\"\">support@gequip.com<\/a><\/span>\n<\/div>\n\n\n<div class=\"copyright\">\n<a href=\"https:\/\/www.bbb.org\/us\/sc\/simpsonville\/profile\/tools\/general-equipment-supply-inc-0673-15001519\/#sealclick\" target=\"_blank\" rel=\"nofollow\"><img src=\"https:\/\/seal-upstatesc.bbb.org\/seals\/blue-seal-96-50-bbb-15001519.png\" style=\"border: 0;\" alt=\"General Equipment & Supply, Inc BBB Business Review\" \/><\/a>\n<p>&copy; 2024 General Equipment & Supply<\/p>\n<a href=\"{{shop.brand.logo}}\">{{shop.brand.logo | img_url: '80x80' | img_tag}}<\/a>\n<\/div>","color_scheme":"","padding_top":0,"padding_bottom":0}},"custom_liquid_kDVKHw":{"type":"custom-liquid","custom_css":[".policy {display: flex; justify-content: space-around; align-items: center; height: auto; background: #334fb4; color: #fff; padding: 0 15%; margin: 0; list-style: none;}",".policy li {line-height: 1.15; text-align: center; font-size: 1.25rem;}",".policy a {color: #fff; text-decoration: none; line-height: 1;}"],"settings":{"custom_liquid":"<ul class=\"policy\">\n\n{%- for policy in shop.policies %}\n  <li style=\"text-transform: capitalize;\"><a href=\"{{policy.url}}\">{{ policy.title }}<\/a><\/li>\n{%- endfor %}\n<li><a href=\"https:\/\/www.gequip.com\/pages\/one-year-warranty\" target=\"_blank\">One Year Warranty<\/a><\/li>\n<\/ul>","color_scheme":"","padding_top":0,"padding_bottom":0}},"custom_liquid_qBEVq6":{"type":"custom-liquid","custom_css":[".payment {display: flex; justify-content: space-between; align-items: center; height: auto; padding: 3rem 5% 3rem 5%; width: 100%; background: #334fb4;}",".copyright p {color: #fff; text-align: left;}"],"settings":{"custom_liquid":"<div class=\"payment\">\n\n<div class=\"copyright\">\n\n<p>&copy; 2024 General Equipment & Supply<\/p>\n\n<\/div>\n<a href=\"https:\/\/www.bbb.org\/us\/sc\/simpsonville\/profile\/tools\/general-equipment-supply-inc-0673-15001519\/#sealclick\" target=\"_blank\" rel=\"nofollow\"><img src=\"https:\/\/seal-upstatesc.bbb.org\/seals\/blue-seal-96-50-bbb-15001519.png\" style=\"border: 0;\" alt=\"General Equipment & Supply, Inc BBB Business Review\" \/><\/a>\n\n <span>{% for type in shop.enabled_payment_types -%} {{ type | payment_type_svg_tag }}\n{% endfor %}<\/i>\n<\/span>\n<\/div>","color_scheme":"","padding_top":0,"padding_bottom":0}},"custom_liquid_JLKyhc":{"type":"custom-liquid","custom_css":[".footer-support-banner {display: none; background: #fff; opacity: 1; z-index: 999999;}","@media only screen and (max-width: 992px) {.footer-support-banner {display: flex; flex-direction: column; align-content: center; position: fixed; bottom: 0; top: 95vh; left: 0; right: 0; background: #fff; } ion-icon {padding: 2.5rem; border: 0px #0f87ff solid; background-color: #fff; font-size: 3rem; }}"],"settings":{"custom_liquid":"<div class=\"page-width footer-support-banner\"\nstyle=\"background-color:#fff; border-top: 1px blue solid;\">\n<div style=\"\ndisplay:flex;\nflex-direction:row;\njustify-content: space-between; \nheight:auto; \nmax-height:2vh;\nmax-width:1600px;\nbackground:#fff;\n\">\n<span>\n<a href=\"tel:1.800.800.6011\"><ion-icon name=\"home-outline\"><\/ion-icon><\/a><\/span>\n\n<span>\n<a href=\"mailto:support@gequip.com\"><ion-icon name=\"mail-outline\"><\/ion-icon>\n<\/a>\n<\/span>\n<span>\n<a href=\"tel:864.256.6174\"><ion-icon name=\"call-outline\"><\/ion-icon>\n<\/a>\n<\/span>\n<\/div>\n<\/div>","color_scheme":"","padding_top":0,"padding_bottom":0}}},"order":["newsletter_HA7dhp","footer","custom_liquid_aVfYFP","custom_liquid_wAN3xP","custom_liquid_kDVKHw","custom_liquid_qBEVq6","custom_liquid_JLKyhc"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "newsletter_HA7dhp": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_dwxg86": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join our Mailing List",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_DbTNYy": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Sign up to receive discounts and the latest new deals !</p>"
+          }
+        },
+        "email_form_yzWNUg": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading_dwxg86",
+        "paragraph_DbTNYy",
+        "email_form_yzWNUg"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_LdDPHQ": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": ""
+          }
+        }
+      },
+      "block_order": [
+        "link_list_LdDPHQ"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-5",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_aVfYFP": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        ".copyright {display: flex; justify-content: space-around; align-items: center; height: auto; width: 100%; background: #334fb4; padding: 2rem 0;}",
+        ".copyright p {color: #fff; text-align: center;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"copyright\">\n\n<p>&copy; 2024 General Equipment & Supply</p>\n\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_wAN3xP": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        ".bbb {display: flex; justify-content: space-around; align-items: center; height: auto; width: 100%; margin: 0 auto; padding: 0.5rem 10% 0 3%; background: #334fb4;}",
+        "a {text-decoration: none; color: #fff; font-size: 1.5rem;}",
+        "ion-icon {color: #fff; padding-right: 0.5rem;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"bbb\">\n<span>{{ shop.address }}</span>\n<span><ion-icon name=\"call-outline\"></ion-icon>\n<a href=\"\">864.256.6174</a></span>\n<span><ion-icon name=\"mail-outline\"></ion-icon>\n<a href=\"\">support@gequip.com</a></span>\n</div>\n\n\n<div class=\"copyright\">\n<a href=\"https://www.bbb.org/us/sc/simpsonville/profile/tools/general-equipment-supply-inc-0673-15001519/#sealclick\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://seal-upstatesc.bbb.org/seals/blue-seal-96-50-bbb-15001519.png\" style=\"border: 0;\" alt=\"General Equipment & Supply, Inc BBB Business Review\" /></a>\n<p>&copy; 2024 General Equipment & Supply</p>\n<a href=\"{{shop.brand.logo}}\">{{shop.brand.logo | img_url: '80x80' | img_tag}}</a>\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_kDVKHw": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".policy {display: flex; justify-content: space-around; align-items: center; height: auto; background: #334fb4; color: #fff; padding: 0 15%; margin: 0; list-style: none;}",
+        ".policy li {line-height: 1.15; text-align: center; font-size: 1.25rem;}",
+        ".policy a {color: #fff; text-decoration: none; line-height: 1;}"
+      ],
+      "settings": {
+        "custom_liquid": "<ul class=\"policy\">\n\n{%- for policy in shop.policies %}\n  <li style=\"text-transform: capitalize;\"><a href=\"{{policy.url}}\">{{ policy.title }}</a></li>\n{%- endfor %}\n<li><a href=\"https://www.gequip.com/pages/one-year-warranty\" target=\"_blank\">One Year Warranty</a></li>\n</ul>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_qBEVq6": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".payment {display: flex; justify-content: space-between; align-items: center; height: auto; padding: 3rem 5% 3rem 5%; width: 100%; background: #334fb4;}",
+        ".copyright p {color: #fff; text-align: left;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"payment\">\n\n<div class=\"copyright\">\n\n<p>&copy; 2024 General Equipment & Supply</p>\n\n</div>\n<a href=\"https://www.bbb.org/us/sc/simpsonville/profile/tools/general-equipment-supply-inc-0673-15001519/#sealclick\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://seal-upstatesc.bbb.org/seals/blue-seal-96-50-bbb-15001519.png\" style=\"border: 0;\" alt=\"General Equipment & Supply, Inc BBB Business Review\" /></a>\n\n <span>{% for type in shop.enabled_payment_types -%} {{ type | payment_type_svg_tag }}\n{% endfor %}</i>\n</span>\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_JLKyhc": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".footer-support-banner {display: none; background: #fff; opacity: 1; z-index: 999999;}",
+        "@media only screen and (max-width: 992px) {.footer-support-banner {display: flex; flex-direction: column; align-content: center; position: fixed; bottom: 0; top: 95vh; left: 0; right: 0; background: #fff; } ion-icon {padding: 2.5rem; border: 0px #0f87ff solid; background-color: #fff; font-size: 3rem; }}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"page-width footer-support-banner\"\nstyle=\"background-color:#fff; border-top: 1px blue solid;\">\n<div style=\"\ndisplay:flex;\nflex-direction:row;\njustify-content: space-between; \nheight:auto; \nmax-height:2vh;\nmax-width:1600px;\nbackground:#fff;\n\">\n<span>\n<a href=\"tel:1.800.800.6011\"><ion-icon name=\"home-outline\"></ion-icon></a></span>\n\n<span>\n<a href=\"mailto:support@gequip.com\"><ion-icon name=\"mail-outline\"></ion-icon>\n</a>\n</span>\n<span>\n<a href=\"tel:864.256.6174\"><ion-icon name=\"call-outline\"></ion-icon>\n</a>\n</span>\n</div>\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "newsletter_HA7dhp",
+    "footer",
+    "custom_liquid_aVfYFP",
+    "custom_liquid_wAN3xP",
+    "custom_liquid_kDVKHw",
+    "custom_liquid_qBEVq6",
+    "custom_liquid_JLKyhc"
+  ]
+}
