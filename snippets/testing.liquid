@@ -1,0 +1,17 @@
+<p class="testing">
+  <a href="https://www.shopify.com">Shopify</a>
+  {{ block.settings.test }}
+</p>
+
+{% schema %}
+{
+  "name": "Testing",
+  "settings": [
+    {
+      "type": "html",
+      "id": "text",
+      "label": "Welcome to our shop!"
+    }
+  ]
+}
+{% endschema %}
