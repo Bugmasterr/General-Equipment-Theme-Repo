@@ -1,1 +1,294 @@
-{"sections":{"main":{"type":"main-product","blocks":{"custom_liquid_9wh6PM":{"type":"custom_liquid","settings":{"custom_liquid":"<h6 style=\"line-height:1; text-align:right; font-size:2rem; margin:0; padding:0;\">\n   <a style=\"text-decoration:none; color:blue; href=\"{{ product.vendor | url_for_vendor }}\">\n           {{ product.vendor }}<\/a><\/h6>"}},"custom_liquid_Ce6Pf9":{"type":"custom_liquid","settings":{"custom_liquid":"{% assign product_condition = 'Reconditioned' %} \n  {% if product.description contains 'New' %}\n\n{% assign product_condition = 'New Surplus' %} \n\n  {% elsif product.title contains 'New' %}\n{% assign product_condition = 'New Surplus' %} \n   \n  {% elsif product.description contains 'Used' %}\n{% assign product_condition = 'Used' %} \n   \n  {% elsif product.title contains 'Used' %}\n{% assign product_condition = 'Used' %} \n \n  {% else %}\n {% assign product_condition = 'Reconditioned' %} \n    \n  {% endif %}\n\n   <h4 style=\"margin:4rem 0 0 0; padding:0;line-height:1rem; color: salmon;\">{{ product_condition }}<\/h4>"}},"custom_liquid_Bn84Eb":{"type":"custom_liquid","settings":{"custom_liquid":"<div style=\"width:100%; min-width:100%; padding:0; display:flex; flex-direction:column; \">\n<h1 style=\"line-height:1; font-size: 3.5rem;\">{{ product.selected_or_first_available_variant.sku }} <\/h1>\n\n<h2 style=\"font-size: 1.5rem; min-width:100%; line-height:2;\">{{ product.title \n }}<\/h2>\n<\/div>"}},"custom_liquid_hhUg9M":{"type":"custom_liquid","settings":{"custom_liquid":"{% if product.metafields.ges.lead_time %}\n{% assign lead_time = product.metafields.ges.lead_time %}\n{%- elsif product.title contains 'Reconditioned' %}\n{% assign lead_time = 'Ships in 7 - 10 business Days' %}\n{% else %}\n{% assign lead_time = 'Ships Next Day' %}\n\n{% endif %}\n\n<div style=\"background:#eee; padding:2.5rem; width: auto; display: flex; align-items:center; justify-content:flex-end;\">\n<div style=\"width:4rem; height:auto;\"><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 640 512\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https:\/\/fontawesome.com License - https:\/\/fontawesome.com\/license\/free Copyright 2024 Fonticons, Inc.--><path d=\"M112 0C85.5 0 64 21.5 64 48l0 48L16 96c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 208 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 160l-16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l16 0 176 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 224l-48 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 144 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 288l0 128c0 53 43 96 96 96s96-43 96-96l128 0c0 53 43 96 96 96s96-43 96-96l32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64 0-32 0-18.7c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7L416 96l0-48c0-26.5-21.5-48-48-48L112 0zM544 237.3l0 18.7-128 0 0-96 50.7 0L544 237.3zM160 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm272 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z\"\/><\/svg><\/div>\n  <h3 style=\"color:#444;line-height:1; padding:0 2rem;\">\n    <strong>{{ lead_time }}<\/strong>\n  <\/h3>\n<\/div>\n<small><i><p style=\"text-align:right; padding:0; margin:0; \">* Shipping Calculated at Checkout<\/p><\/i><\/small>"}},"custom_liquid_b7cHiH":{"type":"custom_liquid","settings":{"custom_liquid":"<div class=\"no-js-hidden\" id=\"price-{{ section.id }}\" role=\"status\">\n{% assign retail_price = product.selected_or_first_available_variant.compare_at_price %}\n<div style=\"padding:1rem 0;\">\n\n<p  style=\"font-size:5.5rem; margin:0;padding:0; text-align:right; line-height:1;\"> {{ product.selected_or_first_available_variant.price | money }}<\/p>\n\n<p style=\" line-height:1.5;\nmargin:0;\npadding: 0; text-align:right;\nfont-size:2.5rem; color:red;\"> SAVE {{ retail_price | minus :product.selected_or_first_available_variant.price | money  }} <\/p>\n<\/div>\n<\/div>"}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button","swatch_shape":"circle"}},"quantity_selector":{"type":"quantity_selector","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"show_gift_card_recipient":true}},"custom_liquid_7chPqC":{"type":"custom_liquid","settings":{"custom_liquid":"<div style=\"margin-top:2rem;>{% for type in shop.enabled_payment_types -%} {{ type | payment_type_svg_tag }}\n{% endfor %}<\/i>\n<\/div>"}},"inventory_ga3tAb":{"type":"inventory","settings":{"text_style":"body","inventory_threshold":10,"show_inventory_quantity":true}},"custom_liquid_pdXLRz":{"type":"custom_liquid","settings":{"custom_liquid":"<div style=\"height:auto; width: 100%; margin:2.5rem 0; border-bottom: 2px solid #ccc;\">\n<h5 style=\"font-size: 1.5rem; line-height: 3; color:#111;\">Product Description<\/h5>\n<\/div>\n{{ product.description }}"}},"custom_liquid_cag8DW":{"type":"custom_liquid","settings":{"custom_liquid":"{%- assign variant = product.variants.first -%}\n\n<p>Shipping Weight: {{ variant.weight | weight_with_unit }} <\/p>"}},"custom_liquid_CVcB3J":{"type":"custom_liquid","settings":{"custom_liquid":"<div style=\"margin: 2.5rem 0;border:solid 1px #666; padding: 2rem; background: #eee;\">\n{% if product.metafields.custom.documentation.value %}\n\n<p style=\"font-size:2rem;padding:0; display: flex; align-items:center; Justify-content:flex-start;\"><i style=\"padding:2rem 1rem 0 0;\"><svg style=\"width:3rem; height:auto;\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 448 512\"><path d=\"M48 96l0 320c0 8.8 7.2 16 16 16l320 0c8.8 0 16-7.2 16-16l0-245.5c0-4.2-1.7-8.3-4.7-11.3l33.9-33.9c12 12 18.7 28.3 18.7 45.3L448 416c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l245.5 0c17 0 33.3 6.7 45.3 18.7l74.5 74.5-33.9 33.9L320.8 84.7c-.3-.3-.5-.5-.8-.8L320 184c0 13.3-10.7 24-24 24l-192 0c-13.3 0-24-10.7-24-24L80 80 64 80c-8.8 0-16 7.2-16 16zm80-16l0 80 144 0 0-80L128 80zm32 240a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z\"\/><\/svg><\/i><b style=\"padding: 1.25rem 0 0 0;\">Downloads<\/b><\/p>\n<p style=\"padding:0; line-height:1; margin:0;\"><a href=\"{{product.metafields.custom.documentation.value[0].url}}\"\ntarget=\"_blank\" style=\"text-decoration:none; \"> {{product.metafields.custom.documentation.value[0].text}}<\/a><\/p>\n\n{% endif %}\n<\/div>"}},"custom_liquid_Gm4JmL":{"type":"custom_liquid","settings":{"custom_liquid":"{%-assign disclaimer = '' %}\n{%\nassign new_disclaimer = ' Buyer understands that the Goods described herein are new surplus by persons other than GES. GES is not obligated to do any repair work or modifications upon the Goods prior to sale or delivery. \n       Any modifications performed by GES on the Goods prior to sale shall be performed as a result of the sole request of \n       Buyer using designs and instructions provided by Buyer. GES will attempt to comply with, but will not guarantee, \n       shipping date and or delivery date. \n       Buyer shall have fifteen (15) days from the date of delivery to accept product. The buyer shall have fifteen (15) days from the date of delivery to accept product.\n       We offer a 1-year operational warranty on all reconditioned equipment. ' %}\n{%\nassign used_disclaimer = ' Buyer understands that the Goods described herein have been used by persons other than GES. \n    GES is not obligated to do any repair work or modifications upon the Goods prior to sale or delivery. \n    Any repair work or modifications performed by GES on the Goods prior to sale shall be performed as a result of the sole request of Buyer using designs and instructions provided by Buyer. \n    GES will attempt to comply with, but will not guarantee, shipping date and or delivery date. \n    Buyer shall have fifteen (15) days from the date of delivery to accept product.'\n%}\n{%\nassign reconditioned_disclaimer = 'This is a reconditioned product and is in full operational condition.  Photo may not represent the actual product which may or may not contain some cosmetic blemishes that do not interfere with functionality. These units have been repainted and the manufacturer logo may or may not be visible. GES will attempt to comply with, but will not guarantee, shipping date and or delivery date. \n       The buyer shall have fifteen (15) days from the date of delivery to accept product.\n       We offer a 1-year operational warranty on all reconditioned equipment\n      ' %}\n\n{% if product.title contains 'New' %}\n {% assign disclaimer = new_disclaimer %}\n{% elsif product.description contains 'New' %}\n {% assign disclaimer = new_disclaimer %}\n{% elsif product.title contains 'Used' %}\n {% assign disclaimer = used_disclaimer %}\n{% elsif product.description contains 'Used' %}\n {% assign disclaimer = used_disclaimer %}\n{% else %}\n {% assign disclaimer = reconditioned_disclaimer %}\n{% endif %}\n<div style=\"display:block; width:auto; hieght:auto;\">\n  <small><b>Disclaimer<\/b><\/small>\n<i><small>{{ disclaimer }}<\/small><\/i>\n<\/div>"}},"custom_liquid_mi8Wwd":{"type":"custom_liquid","settings":{"custom_liquid":"<div style=\"padding: 0 2rem 0 0;\">\n\n<h5 style=\"font-size:2rem; margin-top:2rem;color:red;\">Online Sales & Support<\/h5>\n<p>Contact <a href=\"mailto:support@gqeuip.com\" style=\"text-decoration:none;\">support@gequip.com<\/a> or call \n  <a href=\"tel:864.256.6174\" style=\"text-decoration:none;\">864.256.6174<\/a> for any questions or concerns. <\/p>\n\n<\/div>"}},"custom_liquid_Rdi8mX":{"type":"custom_liquid","settings":{"custom_liquid":"<div style=\"padding:2rem 0 0;\">\n\n<h5 style=\"font-size:2rem; color:blue\">Rentals<\/h5>\nTo information about our rental program, availability and pricing complete use the contact form below or call\n<a href=\"tel:1.800.800.6011\" style=\"text-decoration:none;\"> 1.800.800.6011<\/a>\n\n<\/div>"}},"description":{"type":"description","disabled":true,"settings":{}},"price":{"type":"price","disabled":true,"settings":{}},"share":{"type":"share","disabled":true,"settings":{"share_label":"Share"}},"title":{"type":"title","disabled":true,"settings":{}},"custom_liquid_Mc3j9q":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"<p style=\"color:#eee;padding: 2rem; font-size:2rem;line-height:1; background-color:rgba(0,0,255,0.8);\">For more information on this product please use the chat, contact form or email us.<br><a href=\"mailto:support@gequip.com\" style=\"color:#eee; text-decoration:none; line-height:2.5; font-size: 2.5rem;\">support@gequip.com<\/a><\/p>"}},"custom_liquid_7eLkYU":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"{% assign warranty = 'With One (1) Year Warranty' %}\n{% if product.title contains 'Reconditioned' %}\n <h6 style=\"margin:0;\">\n      <a href=\"https:\/\/www.gequip.com\/pages\/one-year-warranty-for-recondioned-remanufactured-goods\" target=\"_blank\"\n        >{{ warranty }}<\/a\n      >\n    <\/h6>\n    {% elsif product.title contains 'Reconditioned' %}\n   \n    <h6 style=\"margin:0;\">\n      <a href=\"https:\/\/www.gequip.com\/pages\/one-year-warranty-for-recondioned-remanufactured-goods\" target=\"_blank\"\n        >{{ warranty }}<\/a\n      >\n    <\/h6>\n{% endif %}"}},"custom_liquid_Yrjx8t":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"<div style=\"height:2.5rem; width: 100%;\">\n\n<\/div>"}},"custom_liquid_UKmmxq":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"<div style=\"height:2.5rem; width: 100%;\">\n\n<\/div>"}},"custom_liquid_WUYccw":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"{%    assign picker_type = 'swatch_dropdown' %}\n   <div class=\"product-form__input product-form__input--dropdown\">\n          <label class=\"form__label\" for=\"Option-{{ section.id }}-{{ forloop.index0 }}\">\n            {{ option.name }}\n          <\/label>\n          <div class=\"select\">\n            {%- if picker_type == 'swatch_dropdown' -%}\n              <span\n                data-selected-value\n                class=\"dropdown-swatch\"\n              >\n                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}\n              <\/span>\n            {%- endif -%}\n            <select\n              id=\"Option-{{ section.id }}-{{ forloop.index0 }}\"\n              class=\"select__select\"\n              name=\"options[{{ option.name | escape }}]\"\n              form=\"{{ product_form_id }}\"\n            >\n              {% render 'product-variant-options',\n                product: product,\n                option: option,\n                block: block,\n                picker_type: picker_type\n              %}\n            <\/select>\n            {% render 'icon-caret' %}\n          <\/div>"}},"custom_liquid_Hk8Xxr":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"{% for variant in product.variants %}\n\n<p  style=\"font-size:5rem; margin:0;padding:0; text-align:right; line-height:1;\"> {{ variant.price | money }}<\/p>\n{% endfor %}"}}},"block_order":["custom_liquid_9wh6PM","custom_liquid_Ce6Pf9","custom_liquid_Bn84Eb","custom_liquid_hhUg9M","custom_liquid_b7cHiH","variant_picker","quantity_selector","buy_buttons","custom_liquid_7chPqC","inventory_ga3tAb","custom_liquid_pdXLRz","custom_liquid_cag8DW","custom_liquid_CVcB3J","custom_liquid_Gm4JmL","custom_liquid_mi8Wwd","custom_liquid_Rdi8mX","description","price","share","title","custom_liquid_Mc3j9q","custom_liquid_7eLkYU","custom_liquid_Yrjx8t","custom_liquid_UKmmxq","custom_liquid_WUYccw","custom_liquid_Hk8Xxr"],"custom_css":["h1,h2,h3,h4,h5,.h0,.h1,.h2,.h3,.h4,.h5 {margin: 0; line-height: 1.5; font-weight: normal; text-wrap: balance;}",".product__description h4 {color: #085fe1;}",".product__description h5 {font-size: 1.5rem; margin: 2rem 0 0 0; padding: 0; text-decoration: none; color: #000 !important;}","p {line-height: 1.2;}"],"settings":{"enable_sticky_info":true,"color_scheme":"scheme-1","media_size":"large","constrain_to_viewport":true,"media_fit":"cover","gallery_layout":"stacked","media_position":"left","image_zoom":"lightbox","mobile_thumbnails":"hide","hide_variants":true,"enable_video_looping":false,"padding_top":32,"padding_bottom":76}},"contact_form_BDimKy":{"type":"contact-form-product","custom_css":[".contact {max-width: 120rem; margin: 0 auto;}"],"settings":{"heading":"Contact Us","heading_size":"h1","color_scheme":"","padding_top":100,"padding_bottom":100}},"1713184509fea3d0c6":{"type":"apps","blocks":{"loox_reviews_loox_dynamic_section_z6reMp":{"type":"shopify:\/\/apps\/loox-reviews\/blocks\/loox-dynamic-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e","disabled":true,"settings":{"only_photos":false,"aggregated":true,"limit":4,"hide_thumbnails":true,"maxwidth":1080,"is_sample":true}},"loox_reviews_loox_testimonial_carousel_section_r8ywQy":{"type":"shopify:\/\/apps\/loox-reviews\/blocks\/loox-testimonial-carousel-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e","settings":{"maxWidth":1600,"desktopFontSize":35,"mobileFontSize":20,"maxNumberOfCharacters":400,"quoteMarkIcon":"none","reviewerNameColor":"#333333","textColor":"#9a9a9a","starsColor":"","quotesIconColor":"#eaeaea","arrows_iconColor":"#334fb4","arrows_hideOnMobile":true,"pagination_active":true,"pagination_selectedDotColor":"#000000","pagination_dotColor":"#000000","autoplay_active":true,"autoplay_duration":2,"productIds":""}}},"block_order":["loox_reviews_loox_dynamic_section_z6reMp","loox_reviews_loox_testimonial_carousel_section_r8ywQy"],"settings":{"include_margins":true}},"related-products":{"type":"related-products","settings":{"heading":"You may also like","heading_size":"h2","products_to_show":4,"columns_desktop":4,"color_scheme":"scheme-1","image_ratio":"square","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":true,"columns_mobile":"2","padding_top":36,"padding_bottom":28}},"custom_liquid_6aigwP":{"type":"custom-liquid","disabled":true,"settings":{"custom_liquid":"<select>\n\n<variant-selects\n    id=\"variant-selects-{{ section.id }}\"\n    data-section=\"{{ section.id }}\"\n  \n  >   \n {%- for option in product.options_with_values -%}\n<option>{{ option.value }}<\/option>\n{% endfor %}\n<\/variant-selects>","color_scheme":"","padding_top":40,"padding_bottom":52}},"1724858231302e62bb":{"type":"apps","blocks":{"loox_reviews_loox_dynamic_section_93V9q6":{"type":"shopify:\/\/apps\/loox-reviews\/blocks\/loox-dynamic-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e","disabled":true,"settings":{"only_photos":false,"aggregated":true,"limit":4,"hide_thumbnails":false,"maxwidth":1080,"is_sample":true}}},"block_order":["loox_reviews_loox_dynamic_section_93V9q6"],"settings":{"include_margins":true}}},"order":["main","contact_form_BDimKy","1713184509fea3d0c6","related-products","custom_liquid_6aigwP","1724858231302e62bb"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_liquid_9wh6PM": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<h6 style=\"line-height:1; text-align:left; font-size:2rem; margin:0; padding:0;\">\n   <a style=\"text-decoration:none; color:blue; href=\"{{ product.vendor | url_for_vendor }}\">\n           {{ product.vendor }}</a></h6>"
+          }
+        },
+        "custom_liquid_Ce6Pf9": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% assign product_condition = 'Reconditioned' %} \n  {% if product.description contains 'New' %}\n\n{% assign product_condition = 'New Surplus' %} \n\n  {% elsif product.title contains 'New' %}\n{% assign product_condition = 'New Surplus' %} \n   \n  {% elsif product.description contains 'Used' %}\n{% assign product_condition = 'Used' %} \n   \n  {% elsif product.title contains 'Used' %}\n{% assign product_condition = 'Used' %} \n \n  {% else %}\n {% assign product_condition = 'Reconditioned' %} \n    \n  {% endif %}\n\n   <h4 style=\"margin:4rem 0 0 0; padding:0;line-height:1rem; color: salmon;\">{{ product_condition }}</h4>"
+          }
+        },
+        "custom_liquid_Bn84Eb": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"width:100%; min-width:100%; padding:0; display:flex; flex-direction:column; \">\n<h1 style=\"line-height:1; font-size: 3.5rem;\">{{ product.selected_or_first_available_variant.sku }} </h1>\n\n<h2 style=\"font-size: 1.5rem; min-width:100%; line-height:2;\">{{ product.title \n }}</h2>\n</div>"
+          }
+        },
+        "custom_liquid_hhUg9M": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.ges.lead_time %}\n{% assign lead_time = product.metafields.ges.lead_time %}\n{%- elsif product.title contains 'Reconditioned' %}\n{% assign lead_time = 'Ships in 7 - 10 business Days' %}\n{% else %}\n{% assign lead_time = 'Ships Next Day' %}\n\n{% endif %}\n\n<div style=\"background:#eee; padding:2.5rem; width: auto; display: flex; align-items:center; justify-content:flex-end;\">\n<div style=\"width:4rem; height:auto;\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 512\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M112 0C85.5 0 64 21.5 64 48l0 48L16 96c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 208 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 160l-16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l16 0 176 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 224l-48 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 144 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 288l0 128c0 53 43 96 96 96s96-43 96-96l128 0c0 53 43 96 96 96s96-43 96-96l32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64 0-32 0-18.7c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7L416 96l0-48c0-26.5-21.5-48-48-48L112 0zM544 237.3l0 18.7-128 0 0-96 50.7 0L544 237.3zM160 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm272 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z\"/></svg></div>\n  <h3 style=\"color:#444;line-height:1; padding:0 2rem;\">\n    <strong>{{ lead_time }}</strong>\n  </h3>\n</div>\n<small><i><p style=\"text-align:right; padding:0; margin:0; \">* Shipping Calculated at Checkout</p></i></small>"
+          }
+        },
+        "custom_liquid_b7cHiH": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"no-js-hidden\" id=\"price-{{ section.id }}\" role=\"status\">\n{% assign retail_price = product.selected_or_first_available_variant.compare_at_price %}\n<div style=\"padding:1rem 0;\">\n\n<p  style=\"font-size:5.5rem; margin:0;padding:0; text-align:right; line-height:1;\"> {{ product.selected_or_first_available_variant.price | money }}</p>\n\n<p style=\" line-height:1.5;\nmargin:0;\npadding: 0; text-align:right;\nfont-size:2.5rem; color:red;\"> SAVE {{ retail_price | minus :product.selected_or_first_available_variant.price | money  }} </p>\n</div>\n</div>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "custom_liquid_7chPqC": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"margin-top:2rem;>{% for type in shop.enabled_payment_types -%} {{ type | payment_type_svg_tag }}\n{% endfor %}</i>\n</div>"
+          }
+        },
+        "inventory_ga3tAb": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
+        "custom_liquid_pdXLRz": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"height:auto; width: 100%; margin:2.5rem 0; border-bottom: 2px solid #ccc;\">\n<h5 style=\"font-size: 1.5rem; line-height: 3; color:#111;\">Product Description</h5>\n</div>\n{{ product.description }}"
+          }
+        },
+        "custom_liquid_cag8DW": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{%- assign variant = product.variants.first -%}\n\n<p>Shipping Weight: {{ variant.weight | weight_with_unit }} </p>"
+          }
+        },
+        "custom_liquid_CVcB3J": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"margin: 2.5rem 0;border:solid 1px #666; padding: 2rem; background: #eee;\">\n{% if product.metafields.custom.documentation.value %}\n\n<p style=\"font-size:2rem;padding:0; display: flex; align-items:center; Justify-content:flex-start;\"><i style=\"padding:2rem 1rem 0 0;\"><svg style=\"width:3rem; height:auto;\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\"><path d=\"M48 96l0 320c0 8.8 7.2 16 16 16l320 0c8.8 0 16-7.2 16-16l0-245.5c0-4.2-1.7-8.3-4.7-11.3l33.9-33.9c12 12 18.7 28.3 18.7 45.3L448 416c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l245.5 0c17 0 33.3 6.7 45.3 18.7l74.5 74.5-33.9 33.9L320.8 84.7c-.3-.3-.5-.5-.8-.8L320 184c0 13.3-10.7 24-24 24l-192 0c-13.3 0-24-10.7-24-24L80 80 64 80c-8.8 0-16 7.2-16 16zm80-16l0 80 144 0 0-80L128 80zm32 240a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z\"/></svg></i><b style=\"padding: 1.25rem 0 0 0;\">Downloads</b></p>\n<p style=\"padding:0; line-height:1; margin:0;\"><a href=\"{{product.metafields.custom.documentation.value[0].url}}\"\ntarget=\"_blank\" style=\"text-decoration:none; \"> {{product.metafields.custom.documentation.value[0].text}}</a></p>\n\n{% endif %}\n</div>"
+          }
+        },
+        "custom_liquid_Gm4JmL": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{%-assign disclaimer = '' %}\n{%\nassign new_disclaimer = ' Buyer understands that the Goods described herein are new surplus by persons other than GES. GES is not obligated to do any repair work or modifications upon the Goods prior to sale or delivery. \n       Any modifications performed by GES on the Goods prior to sale shall be performed as a result of the sole request of \n       Buyer using designs and instructions provided by Buyer. GES will attempt to comply with, but will not guarantee, \n       shipping date and or delivery date. \n       Buyer shall have fifteen (15) days from the date of delivery to accept product. The buyer shall have fifteen (15) days from the date of delivery to accept product.\n       We offer a 1-year operational warranty on all reconditioned equipment. ' %}\n{%\nassign used_disclaimer = ' Buyer understands that the Goods described herein have been used by persons other than GES. \n    GES is not obligated to do any repair work or modifications upon the Goods prior to sale or delivery. \n    Any repair work or modifications performed by GES on the Goods prior to sale shall be performed as a result of the sole request of Buyer using designs and instructions provided by Buyer. \n    GES will attempt to comply with, but will not guarantee, shipping date and or delivery date. \n    Buyer shall have fifteen (15) days from the date of delivery to accept product.'\n%}\n{%\nassign reconditioned_disclaimer = 'This is a reconditioned product and is in full operational condition.  Photo may not represent the actual product which may or may not contain some cosmetic blemishes that do not interfere with functionality. These units have been repainted and the manufacturer logo may or may not be visible. GES will attempt to comply with, but will not guarantee, shipping date and or delivery date. \n       The buyer shall have fifteen (15) days from the date of delivery to accept product.\n       We offer a 1-year operational warranty on all reconditioned equipment\n      ' %}\n\n{% if product.title contains 'New' %}\n {% assign disclaimer = new_disclaimer %}\n{% elsif product.description contains 'New' %}\n {% assign disclaimer = new_disclaimer %}\n{% elsif product.title contains 'Used' %}\n {% assign disclaimer = used_disclaimer %}\n{% elsif product.description contains 'Used' %}\n {% assign disclaimer = used_disclaimer %}\n{% else %}\n {% assign disclaimer = reconditioned_disclaimer %}\n{% endif %}\n<div style=\"display:block; width:auto; hieght:auto;\">\n  <small><b>Disclaimer</b></small>\n<i><small>{{ disclaimer }}</small></i>\n</div>"
+          }
+        },
+        "custom_liquid_mi8Wwd": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"padding: 0 2rem 0 0;\">\n\n<h5 style=\"font-size:2rem; margin-top:2rem;color:red;\">Online Sales & Support</h5>\n<p>Contact <a href=\"mailto:support@gqeuip.com\" style=\"text-decoration:none;\">support@gequip.com</a> or call \n  <a href=\"tel:864.256.6174\" style=\"text-decoration:none;\">864.256.6174</a> for any questions or concerns. </p>\n\n</div>"
+          }
+        },
+        "custom_liquid_Rdi8mX": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"padding:2rem 0 0;\">\n\n<h5 style=\"font-size:2rem; color:blue\">Rentals</h5>\nTo information about our rental program, availability and pricing complete use the contact form below or call\n<a href=\"tel:1.800.800.6011\" style=\"text-decoration:none;\"> 1.800.800.6011</a>\n\n</div>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "title": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "custom_liquid_Mc3j9q": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<p style=\"color:#eee;padding: 2rem; font-size:2rem;line-height:1; background-color:rgba(0,0,255,0.8);\">For more information on this product please use the chat, contact form or email us.<br><a href=\"mailto:support@gequip.com\" style=\"color:#eee; text-decoration:none; line-height:2.5; font-size: 2.5rem;\">support@gequip.com</a></p>"
+          }
+        },
+        "custom_liquid_7eLkYU": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{% assign warranty = 'With One (1) Year Warranty' %}\n{% if product.title contains 'Reconditioned' %}\n <h6 style=\"margin:0;\">\n      <a href=\"https://www.gequip.com/pages/one-year-warranty-for-recondioned-remanufactured-goods\" target=\"_blank\"\n        >{{ warranty }}</a\n      >\n    </h6>\n    {% elsif product.title contains 'Reconditioned' %}\n   \n    <h6 style=\"margin:0;\">\n      <a href=\"https://www.gequip.com/pages/one-year-warranty-for-recondioned-remanufactured-goods\" target=\"_blank\"\n        >{{ warranty }}</a\n      >\n    </h6>\n{% endif %}"
+          }
+        },
+        "custom_liquid_Yrjx8t": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div style=\"height:2.5rem; width: 100%;\">\n\n</div>"
+          }
+        },
+        "custom_liquid_UKmmxq": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div style=\"height:2.5rem; width: 100%;\">\n\n</div>"
+          }
+        },
+        "custom_liquid_WUYccw": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{%    assign picker_type = 'swatch_dropdown' %}\n   <div class=\"product-form__input product-form__input--dropdown\">\n          <label class=\"form__label\" for=\"Option-{{ section.id }}-{{ forloop.index0 }}\">\n            {{ option.name }}\n          </label>\n          <div class=\"select\">\n            {%- if picker_type == 'swatch_dropdown' -%}\n              <span\n                data-selected-value\n                class=\"dropdown-swatch\"\n              >\n                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}\n              </span>\n            {%- endif -%}\n            <select\n              id=\"Option-{{ section.id }}-{{ forloop.index0 }}\"\n              class=\"select__select\"\n              name=\"options[{{ option.name | escape }}]\"\n              form=\"{{ product_form_id }}\"\n            >\n              {% render 'product-variant-options',\n                product: product,\n                option: option,\n                block: block,\n                picker_type: picker_type\n              %}\n            </select>\n            {% render 'icon-caret' %}\n          </div>"
+          }
+        },
+        "custom_liquid_Hk8Xxr": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{% for variant in product.variants %}\n\n<p  style=\"font-size:5rem; margin:0;padding:0; text-align:right; line-height:1;\"> {{ variant.price | money }}</p>\n{% endfor %}"
+          }
+        }
+      },
+      "block_order": [
+        "custom_liquid_9wh6PM",
+        "custom_liquid_Ce6Pf9",
+        "custom_liquid_Bn84Eb",
+        "custom_liquid_hhUg9M",
+        "custom_liquid_b7cHiH",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "custom_liquid_7chPqC",
+        "inventory_ga3tAb",
+        "custom_liquid_pdXLRz",
+        "custom_liquid_cag8DW",
+        "custom_liquid_CVcB3J",
+        "custom_liquid_Gm4JmL",
+        "custom_liquid_mi8Wwd",
+        "custom_liquid_Rdi8mX",
+        "description",
+        "price",
+        "share",
+        "title",
+        "custom_liquid_Mc3j9q",
+        "custom_liquid_7eLkYU",
+        "custom_liquid_Yrjx8t",
+        "custom_liquid_UKmmxq",
+        "custom_liquid_WUYccw",
+        "custom_liquid_Hk8Xxr"
+      ],
+      "custom_css": [
+        "h1,h2,h3,h4,h5,.h0,.h1,.h2,.h3,.h4,.h5 {margin: 0; line-height: 1.5; font-weight: normal; text-wrap: balance;}",
+        ".product__description h4 {color: #085fe1;}",
+        ".product__description h5 {font-size: 1.5rem; margin: 2rem 0 0 0; padding: 0; text-decoration: none; color: #000 !important;}",
+        "p {line-height: 1.2;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 32,
+        "padding_bottom": 76
+      }
+    },
+    "contact_form_BDimKy": {
+      "type": "contact-form-product",
+      "custom_css": [
+        ".contact {max-width: 120rem; margin: 0 auto;}"
+      ],
+      "settings": {
+        "heading": "Contact Us",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "1713184509fea3d0c6": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "custom_liquid_6aigwP": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<select>\n\n<variant-selects\n    id=\"variant-selects-{{ section.id }}\"\n    data-section=\"{{ section.id }}\"\n  \n  >   \n {%- for option in product.options_with_values -%}\n<option>{{ option.value }}</option>\n{% endfor %}\n</variant-selects>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1724858231302e62bb": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "contact_form_BDimKy",
+    "1713184509fea3d0c6",
+    "related-products",
+    "custom_liquid_6aigwP",
+    "1724858231302e62bb"
+  ]
+}
