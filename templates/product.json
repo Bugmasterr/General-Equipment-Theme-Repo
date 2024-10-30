@@ -15,7 +15,7 @@
         "custom_liquid_9wh6PM": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<h6 style=\"line-height:1; text-align:left; font-size:2rem; margin:0; padding:0;\">\n   <a style=\"text-decoration:none; color:blue; href=\"{{ product.vendor | url_for_vendor }}\">\n           {{ product.vendor }}</a></h6>"
+            "custom_liquid": "<h6 style=\"line-height:1; text-align:right; font-size:2rem; margin:0; padding:0;\">\n   <a style=\"text-decoration:none; color:blue; href=\"{{ product.vendor | url_for_vendor }}\">\n           {{ product.vendor }}</a></h6>"
           }
         },
         "custom_liquid_Ce6Pf9": {
