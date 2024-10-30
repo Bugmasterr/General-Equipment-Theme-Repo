@@ -103,6 +103,15 @@
                 </div>
 
               {% when 'price-shit' %}
+                <div class="no-js-hidden" id="price-shit-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                  {%- render 'price',
+                    product: product,
+                    use_variant: true,
+                    show_badges: true,
+                    price_class: 'price--large'
+                  -%}
+                </div>
+
               {%- when 'price' -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
