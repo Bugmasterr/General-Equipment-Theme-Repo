@@ -178,7 +178,6 @@
             "custom_liquid": "{% for variant in product.variants %}\n\n<p  style=\"font-size:5rem; margin:0;padding:0; text-align:right; line-height:1;\"> {{ variant.price | money }}</p>\n{% endfor %}"
           }
         }
-        
       },
       "block_order": [
         "custom_liquid_9wh6PM",
@@ -209,18 +208,15 @@
         "custom_liquid_Hk8Xxr"
       ],
       "custom_css": [
-        "h1,h2,h3,h4,h5,.h0,.h1,.h2,.h3,.h4,.h5 {margin: 0; line-height: 1.5; font-weight: normal; text-wrap: balance;}",
-        ".product__description h4 {color: #085fe1;}",
-        ".product__description h5 {font-size: 1.5rem; margin: 2rem 0 0 0; padding: 0; text-decoration: none; color: #000 !important;}",
-        "p {line-height: 1.2;}"
+
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "large",
+        "media_size": "small",
         "constrain_to_viewport": true,
         "media_fit": "cover",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
