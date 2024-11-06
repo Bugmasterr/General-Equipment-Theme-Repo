@@ -222,7 +222,7 @@
   "platform_customizations": {
     "custom_css": [
       "div {--max-width: 90vw;}",
-      "@media (min-width: 768px) {body {width: 95%; margin: 0 auto; }}",
+      "@media (min-width: 768px) {body {width: 90%; margin: 0 auto; }}",
       ".badge {display: none;}"
     ]
   },
